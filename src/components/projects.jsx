@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from "react";
 import image1 from "../assets/rawfoodslowfeeder.png";
 import image2 from "../assets/juvimor.png";
 import image3 from "../assets/hsm.png";
@@ -11,164 +11,129 @@ import image9 from "../assets/agility.png";
 import image10 from "../assets/browsercache.png";
 import image11 from "../assets/dpwh.png";
 
-const projects = () => {
+const Projects = () => {
+  const [showAll, setShowAll] = useState(false);
+
+  const cards = [
+    {
+      image: image1,
+      title: "The Original Raw Food Slow Feeder",
+      link: "https://rawfoodslowfeeder.com/",
+      tags: ["WordPress", "Elementor Pro", "Woocommerce", "CSS", "jQuery", "Google Tag Manager", "Google Analytics"],
+    },
+    {
+      image: image2,
+      title: "Juvimor Construction & Trading Services",
+      link: "https://juvimor.com",
+      tags: ["WordPress", "Elementor Pro", "CSS", "jQuery"],
+    },
+    {
+      image: image3,
+      title: "HSM Aero",
+      link: "https://hsm.aero",
+      tags: ["WordPress", "Elementor Pro", "CSS", "jQuery"],
+    },
+    {
+      image: image11,
+      title: "DPWH Archive",
+      tags: ["React", "Node JS", "Express JS", "API", "Tailwind CSS"],
+    },
+    {
+      image: image4,
+      title: "LCS Logistics & Customs Services",
+      link: "http://lcslogistics.com",
+      tags: ["WordPress", "Elementor Pro", "CSS", "jQuery"],
+    },
+    {
+      image: image10,
+      title: "Browser Cache",
+      link: "https://wordpress-1091546-4178418.cloudwaysapps.com/",
+      tags: ["WordPress", "Elementor Pro", "CSS", "jQuery"],
+    },
+    {
+      image: image5,
+      title: "Obando Bulacan",
+      tags: ["WordPress", "Elementor Pro", "CSS", "jQuery"],
+    },
+    {
+      image: image6,
+      title: "MPM House",
+      link: "https://mpm.house",
+      tags: ["WordPress", "Elementor Pro", "CSS", "jQuery"],
+    },
+    {
+      image: image7,
+      title: "Spotlight Accounting",
+      tags: ["WordPress", "Elementor Pro", "CSS", "jQuery"],
+    },
+    {
+      image: image8,
+      title: "Keystone Invest",
+      link: "https://keystone-invest.co.uk",
+      tags: ["WordPress", "Elementor Pro", "CSS", "jQuery", "PHP", "Advance Custom Fields", "Custom Theme"],
+    },
+    {
+      image: image9,
+      title: "Agility Outsourcing",
+      link: "https://agility-outsourcing.co.uk",
+      tags: ["WordPress", "Elementor Pro", "CSS", "jQuery"],
+    },
+  ];
+
+  // show only 6 initially
+  const visibleCards = showAll ? cards : cards.slice(0, 3);
+
   return (
-    <div className="bg-black" id='projects'>
-  <div className="max-w-[1000px] h-full mx-auto grid gap-6 p-6 sm:p-10 lg:p-20">
-    {/* Section Title */}
-    <h1 className='text-3xl sm:text-5xl font-extrabold 
-                      bg-gradient-to-r from-orange-400 via-white to-orange-400
-                      text-transparent bg-clip-text drop-shadow-lg'>Projects</h1>
+    <div className="bg-black" id="projects">
+      <div className="max-w-[1000px] mx-auto grid gap-6 p-6 sm:p-10 lg:p-20">
+        {/* Title */}
+        <h1 className="text-3xl sm:text-5xl font-extrabold bg-gradient-to-r from-orange-400 via-white to-orange-400 text-transparent bg-clip-text drop-shadow-lg">
+          Projects
+        </h1>
 
-    {/* Responsive Grid Container */}
-    <div className="grid grid-cols-1 sm:grid-cols-1 lg:grid-cols-1 gap-6 md:gap-8 lg:gap-10">
-      
-      {/* CARD 1 */}
-      <a href="https://rawfoodslowfeeder.com/" target="_blank" rel="noopener noreferrer"><div className="w-full max-w-full mx-auto grid gap-6 border p-6 bg-neutral-950/80 border-slate-600/20 rounded-4xl hover:bg-orange-700/80 hover:border-orange-500/90 cursor-pointer duration-300">
-        <img className="rounded-t-3xl w-full object-cover" src={image1} alt="The Original Raw Food Slow Feeder" />
-        <div className="flex flex-wrap gap-3 text-white">
-          <p className="rounded-full border border-white py-2 px-4 whitespace-nowrap">WordPress</p>
-          <p className="rounded-full border border-white py-2 px-4 whitespace-nowrap">Elementor Pro</p>
-          <p className="rounded-full border border-white py-2 px-4 whitespace-nowrap">Woocommerce</p>
-          <p className="rounded-full border border-white py-2 px-4 whitespace-nowrap">CSS</p>
-          <p className="rounded-full border border-white py-2 px-4 whitespace-nowrap">jQuery</p>
-          <p className="rounded-full border border-white py-2 px-4 whitespace-nowrap">Google Tag Manager</p>
-          <p className="rounded-full border border-white py-2 px-4 whitespace-nowrap">Google Analytics</p>
+        {/* Cards Grid */}
+        <div className="grid grid-cols-1 gap-6 md:gap-8">
+          {visibleCards.map((card, index) => (
+            <a
+              key={index}
+              href={card.link || "#"}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <div className="w-full mx-auto grid gap-6 border p-6 bg-neutral-950/80 border-slate-600/20 rounded-4xl hover:bg-orange-700/80 hover:border-orange-500/90 cursor-pointer duration-300">
+                <img
+                  className="rounded-t-3xl w-full object-cover"
+                  src={card.image}
+                  alt={card.title}
+                />
+                <div className="flex flex-wrap gap-3 text-white">
+                  {card.tags.map((tag, i) => (
+                    <p
+                      key={i}
+                      className="rounded-full border border-white py-2 px-4 whitespace-nowrap"
+                    >
+                      {tag}
+                    </p>
+                  ))}
+                </div>
+                <h2 className="text-2xl text-white font-extrabold">{card.title}</h2>
+              </div>
+            </a>
+          ))}
         </div>
-        <h2 className="text-2xl text-white font-extrabold">The Original Raw Food Slow Feeder</h2>
-      </div></a>
 
-      {/* CARD 2 */}
-      <a href="https://juvimor.com" target="_blank" rel="noopener noreferrer"><div className="w-full max-w-full mx-auto grid gap-6 border p-6 bg-neutral-950/80 border-slate-600/20 rounded-4xl hover:bg-orange-700/80 hover:border-orange-500/90 cursor-pointer duration-300">
-        <img className="rounded-t-3xl w-full object-cover" src={image2} alt="Juvimor Construction & Trading Services" />
-        <div className="flex flex-wrap gap-3 text-white">
-          <p className="rounded-full border border-white py-2 px-4 whitespace-nowrap">WordPress</p>
-          <p className="rounded-full border border-white py-2 px-4 whitespace-nowrap">Elementor Pro</p>
-          <p className="rounded-full border border-white py-2 px-4 whitespace-nowrap">CSS</p>
-          <p className="rounded-full border border-white py-2 px-4 whitespace-nowrap">jQuery</p>
+        {/* See More / See Less Button */}
+        <div className="flex justify-center mt-10">
+          <button
+            onClick={() => setShowAll(!showAll)}
+            className="px-6 py-3 rounded-full text-white font-semibold bg-gradient-to-r from-orange-700 via-orange-500 to-orange-300 hover:from-orange-300 hover:via-orange-500 hover:to-orange-700 transition-all duration-300"
+          >
+            {showAll ? "See Less" : "See More"}
+          </button>
         </div>
-        <h2 className="text-2xl text-white font-extrabold">Juvimor Construction & Trading Services</h2>
-      </div></a>
-
-      {/* CARD 3 */}
-      <a href="https://hsm.aero" target="_blank" rel="noopener noreferrer"><div className="w-full max-w-full mx-auto grid gap-6 border p-6 bg-neutral-950/80 border-slate-600/20 rounded-4xl hover:bg-orange-700/80 hover:border-orange-500/90 cursor-pointer duration-300">
-        <img className="rounded-t-3xl w-full object-cover" src={image3} alt="HSM Aero" />
-        <div className="flex flex-wrap gap-3 text-white">
-          <p className="rounded-full border border-white py-2 px-4 whitespace-nowrap">WordPress</p>
-          <p className="rounded-full border border-white py-2 px-4 whitespace-nowrap">Elementor Pro</p>
-          <p className="rounded-full border border-white py-2 px-4 whitespace-nowrap">CSS</p>
-          <p className="rounded-full border border-white py-2 px-4 whitespace-nowrap">jQuery</p>
-        </div>
-        <h2 className="text-2xl text-white font-extrabold">HSM Aero</h2>
-      </div></a>
-
-      {/* CARD 11 */}
-      <div className="w-full max-w-full mx-auto grid gap-6 border p-6 bg-neutral-950/80 border-slate-600/20 rounded-4xl hover:bg-orange-700/80 hover:border-orange-500/90 cursor-pointer duration-300">
-        <img className="rounded-t-3xl w-full object-cover" src={image11} alt="DPWH Archive" />
-        <div className="flex flex-wrap gap-3 text-white">
-          <p className="rounded-full border border-white py-2 px-4 whitespace-nowrap">React</p>
-          <p className="rounded-full border border-white py-2 px-4 whitespace-nowrap">Node JS</p>
-          <p className="rounded-full border border-white py-2 px-4 whitespace-nowrap">Express JS</p>
-          <p className="rounded-full border border-white py-2 px-4 whitespace-nowrap">API</p>
-          <p className="rounded-full border border-white py-2 px-4 whitespace-nowrap">Tailwind CSS</p>
-        </div>
-        <h2 className="text-2xl text-white font-extrabold">DPWH Archive</h2>
       </div>
-
-      {/* CARD 4 */}
-      <a href="http://lcslogistics.com" target="_blank" rel="noopener noreferrer"><div className="w-full max-w-full mx-auto grid gap-6 border p-6 bg-neutral-950/80 border-slate-600/20 rounded-4xl hover:bg-orange-700/80 hover:border-orange-500/90 cursor-pointer duration-300">
-        <img className="rounded-t-3xl w-full object-cover" src={image4} alt="LCS Logistics & Customs Services" />
-        <div className="flex flex-wrap gap-3 text-white">
-          <p className="rounded-full border border-white py-2 px-4 whitespace-nowrap">WordPress</p>
-          <p className="rounded-full border border-white py-2 px-4 whitespace-nowrap">Elementor Pro</p>
-          <p className="rounded-full border border-white py-2 px-4 whitespace-nowrap">CSS</p>
-          <p className="rounded-full border border-white py-2 px-4 whitespace-nowrap">jQuery</p>
-        </div>
-        <h2 className="text-2xl text-white font-extrabold">LCS Logistics & Customs Services</h2>
-      </div></a>
-
-      {/* CARD 10 */}
-      <a href="https://wordpress-1091546-4178418.cloudwaysapps.com/" target="_blank" rel="noopener noreferrer"><div className="w-full max-w-full mx-auto grid gap-6 border p-6 bg-neutral-950/80 border-slate-600/20 rounded-4xl hover:bg-orange-700/80 hover:border-orange-500/90 cursor-pointer duration-300">
-        <img className="rounded-t-3xl w-full object-cover" src={image10} alt="Browser Cache" />
-        <div className="flex flex-wrap gap-3 text-white">
-          <p className="rounded-full border border-white py-2 px-4 whitespace-nowrap">WordPress</p>
-          <p className="rounded-full border border-white py-2 px-4 whitespace-nowrap">Elementor Pro</p>
-          <p className="rounded-full border border-white py-2 px-4 whitespace-nowrap">CSS</p>
-          <p className="rounded-full border border-white py-2 px-4 whitespace-nowrap">jQuery</p>
-        </div>
-        <h2 className="text-2xl text-white font-extrabold">Browser Cache</h2>
-      </div></a>
-
-      {/* CARD 5 */}
-      <a href="https://mg-computing.com/siteb/" target="_blank" rel="noopener noreferrer"></a>
-      <div className="w-full max-w-full mx-auto grid gap-6 border p-6 bg-neutral-950/80 border-slate-600/20 rounded-4xl hover:bg-orange-700/80 hover:border-orange-500/90 cursor-pointer duration-300">
-        <img className="rounded-t-3xl w-full object-cover" src={image5} alt="Obando Bulacan" />
-        <div className="flex flex-wrap gap-3 text-white">
-          <p className="rounded-full border border-white py-2 px-4 whitespace-nowrap">WordPress</p>
-          <p className="rounded-full border border-white py-2 px-4 whitespace-nowrap">Elementor Pro</p>
-          <p className="rounded-full border border-white py-2 px-4 whitespace-nowrap">CSS</p>
-          <p className="rounded-full border border-white py-2 px-4 whitespace-nowrap">jQuery</p>
-        </div>
-        <h2 className="text-2xl text-white font-extrabold">Obando Bulacan</h2>
-      </div>
-
-      {/* CARD 6 */}
-      <a href="https://mpm.house" target="_blank" rel="noopener noreferrer"><div className="w-full max-w-full mx-auto grid gap-6 border p-6 bg-neutral-950/80 border-slate-600/20 rounded-4xl hover:bg-orange-700/80 hover:border-orange-500/90 cursor-pointer duration-300">
-        <img className="rounded-t-3xl w-full object-cover" src={image6} alt="MPM House" />
-        <div className="flex flex-wrap gap-3 text-white">
-          <p className="rounded-full border border-white py-2 px-4 whitespace-nowrap">WordPress</p>
-          <p className="rounded-full border border-white py-2 px-4 whitespace-nowrap">Elementor Pro</p>
-          <p className="rounded-full border border-white py-2 px-4 whitespace-nowrap">CSS</p>
-          <p className="rounded-full border border-white py-2 px-4 whitespace-nowrap">jQuery</p>
-        </div>
-        <h2 className="text-2xl text-white font-extrabold">MPM House</h2>
-      </div></a>
-
-      {/* CARD 7 */}
-      <a href="https://spotlight-accounting.co.uk" target="_blank" rel="noopener noreferrer"></a>
-      <div className="w-full max-w-full mx-auto grid gap-6 border p-6 bg-neutral-950/80 border-slate-600/20 rounded-4xl hover:bg-orange-700/80 hover:border-orange-500/90 cursor-pointer duration-300">
-        <img className="rounded-t-3xl w-full object-cover" src={image7} alt="Spotlight Accounting" />
-        <div className="flex flex-wrap gap-3 text-white">
-          <p className="rounded-full border border-white py-2 px-4 whitespace-nowrap">WordPress</p>
-          <p className="rounded-full border border-white py-2 px-4 whitespace-nowrap">Elementor Pro</p>
-          <p className="rounded-full border border-white py-2 px-4 whitespace-nowrap">CSS</p>
-          <p className="rounded-full border border-white py-2 px-4 whitespace-nowrap">jQuery</p>
-        </div>
-        <h2 className="text-2xl text-white font-extrabold">Spotlight Accounting</h2>
-      </div>
-
-      {/* CARD 8 */}
-      <a href="https://keystone-invest.co.uk" target="_blank" rel="noopener noreferrer"><div className="w-full max-w-full mx-auto grid gap-6 border p-6 bg-neutral-950/80 border-slate-600/20 rounded-4xl hover:bg-orange-700/80 hover:border-orange-500/90 cursor-pointer duration-300">
-        <img className="rounded-t-3xl w-full object-cover" src={image8} alt="Keystone Invest" />
-        <div className="flex flex-wrap gap-3 text-white">
-          <p className="rounded-full border border-white py-2 px-4 whitespace-nowrap">WordPress</p>
-          <p className="rounded-full border border-white py-2 px-4 whitespace-nowrap">Elementor Pro</p>
-          <p className="rounded-full border border-white py-2 px-4 whitespace-nowrap">CSS</p>
-          <p className="rounded-full border border-white py-2 px-4 whitespace-nowrap">jQuery</p>
-          <p className="rounded-full border border-white py-2 px-4 whitespace-nowrap">PHP</p>
-          <p className="rounded-full border border-white py-2 px-4 whitespace-nowrap">Advance Custom Fields</p>
-          <p className="rounded-full border border-white py-2 px-4 whitespace-nowrap">Custom Theme</p>
-        </div>
-        <h2 className="text-2xl text-white font-extrabold">Kesytone Invest</h2>
-      </div></a>
-
-      {/* CARD 9 */}
-      <a href="https://agility-outsourcing.co.uk" target="_blank" rel="noopener noreferrer"><div className="w-full max-w-full mx-auto grid gap-6 border p-6 bg-neutral-950/80 border-slate-600/20 rounded-4xl hover:bg-orange-700/80 hover:border-orange-500/90 cursor-pointer duration-300">
-        <img className="rounded-t-3xl w-full object-cover" src={image9} alt="Agility Oustsourcing" />
-        <div className="flex flex-wrap gap-3 text-white">
-          <p className="rounded-full border border-white py-2 px-4 whitespace-nowrap">WordPress</p>
-          <p className="rounded-full border border-white py-2 px-4 whitespace-nowrap">Elementor Pro</p>
-          <p className="rounded-full border border-white py-2 px-4 whitespace-nowrap">CSS</p>
-          <p className="rounded-full border border-white py-2 px-4 whitespace-nowrap">jQuery</p>
-        </div>
-        <h2 className="text-2xl text-white font-extrabold">Agility Outsourcing</h2>
-      </div></a>
-      
     </div>
-  </div>
-</div>
+  );
+};
 
-  )
-}
-
-export default projects
+export default Projects;
