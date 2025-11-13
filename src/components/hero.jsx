@@ -11,7 +11,7 @@ import Counter from "./counter";
 const hero = () => {
 
     return (
-        <div className='bg-gradient-to-tr from-gray-900 via-black py-40 to-gray-900 h-full z-5'>
+        <div className='bg-gradient-to-tr from-gray-900 via-black py-40 to-gray-900 h-full z-5' id='home'>
             <div className="max-w-[1200px] mx-auto grid gap-6 
                     grid-cols-1 sm:grid-cols-2 md:grid-cols-5 xl:grid-cols-2 lg:py-0 xl:py-20">
                 {/* Left Section */}

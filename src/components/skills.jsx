@@ -7,12 +7,12 @@ import { SiMysql, SiTailwindcss, SiGoogleanalytics, SiGoogletagmanager } from "r
 
 const skills = () => {
   return (
-    <div className='bg-gradient-to-tl from-gray-900 via-black to-gray-900'>
+    <div className='bg-gradient-to-tl from-gray-900 via-black to-gray-900' id='skills'>
         <div className="max-w-[1000px] mx-auto h-full animate-slide-in-bottom flex flex-col items-center justify-items-start p-20">
           <div className='flex flex-col items-start justify-items-start w-full'>
             <h2 className="text-3xl sm:text-5xl font-extrabold 
                      bg-gradient-to-r from-orange-400 via-white to-orange-400
-                     text-transparent bg-clip-text drop-shadow-lg">My Skills</h2>
+                     text-transparent bg-clip-text drop-shadow-lg">Skills & Technologies</h2>
           </div>
             
     

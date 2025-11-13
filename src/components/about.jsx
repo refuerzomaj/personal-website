@@ -2,7 +2,7 @@ import React from 'react'
 
 const about = () => {
   return (
-    <div className=' bg-black py-25 px-10 z-4 h-full grid gap-10'>
+    <div className=' bg-black py-25 px-10 z-4 h-full grid gap-10' id='about'>
       {/*About Me Section*/}
       <div className='max-w-[1000px] mx-auto grid gap-10 leading-7 animate-slide-in-top'>
         <h1 className='text-3xl sm:text-5xl font-extrabold 
@@ -18,7 +18,7 @@ const about = () => {
         <div className='grid gap-6'>
           <h1 className='text-3xl sm:text-5xl font-extrabold 
                       bg-gradient-to-r from-orange-400 via-white to-orange-400
-                      text-transparent bg-clip-text drop-shadow-lg'>My Education</h1>
+                      text-transparent bg-clip-text drop-shadow-lg'>Education</h1>
           <div className='group border-1 p-6 bg-neutral-950/80 border-slate-600/40 rounded-4xl hover:bg-orange-700/80 hover:border-orange-500/90 hover:cursor-pointer duration-300'>
             <div className='grid gap-2'>
               <h3 className='text-2xl text-orange-400/80 font-extrabold group-hover:text-white'>2018-2022</h3>
@@ -35,7 +35,7 @@ const about = () => {
         <div className='grid gap-6'>
           <h1 className='text-3xl sm:text-5xl font-extrabold 
                       bg-gradient-to-r from-orange-400 via-white to-orange-400
-                      text-transparent bg-clip-text drop-shadow-lg'>My Certificates</h1>
+                      text-transparent bg-clip-text drop-shadow-lg'>Certificates</h1>
           {/* Certificates */}
           <div className='grid lg:grid-cols-2 gap-6'>
             <div className='group border-1 p-6 bg-neutral-950/80 border-slate-600/40 rounded-4xl hover:bg-orange-700/80 hover:border-orange-500/90 hover:cursor-pointer duration-300'>
