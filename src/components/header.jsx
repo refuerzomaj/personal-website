@@ -19,7 +19,7 @@ const Header = () => {
   // Scroll spy: highlight active menu when scrolling
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ["home", "about", "skills", "projects", "contact"];
+      const sections = ["home", "about", "skills", "projects", "testimonials", "contact"];
       const scrollY = window.scrollY + 100; // offset for header height
 
       for (let id of sections) {
@@ -79,6 +79,9 @@ const Header = () => {
           <a onClick={() => handleClick("projects")} className={linkClass("projects")}>
             Projects
           </a>
+          <a onClick={() => handleClick("testimonials")} className={linkClass("testimonials")}>
+            Testimonials
+          </a>
           <a
             onClick={() => handleClick("contact")}
             className="font-bold py-3 px-7 rounded-full text-white bg-gradient-to-r from-orange-700 via-orange-500 to-orange-300 hover:from-orange-300 hover:via-orange-500 hover:to-orange-700 transition-colors duration-300"
@@ -90,7 +93,7 @@ const Header = () => {
         {/* Mobile Menu Button */}
         <button
           onClick={() => setMenuOpen(true)}
-          className="md:hidden text-2xl text-orange-500"
+          className="md:hidden text-2xl text-orange-500 cursor-pointer"
         >
           <FaBars />
         </button>
@@ -104,10 +107,10 @@ const Header = () => {
       >
         {/* Close Button */}
         <div className="flex justify-between items-center px-4 py-4 border-b border-gray-700">
-          <span className="text-xl font-bold text-orange-500">Menu</span>
+          <span className="text-xl font-bold text-orange-500 cursor-pointer">Menu</span>
           <button
             onClick={() => setMenuOpen(false)}
-            className="text-2xl text-orange-500"
+            className="text-2xl text-orange-500 cursor-pointer"
           >
             <FaTimes />
           </button>
@@ -148,8 +151,16 @@ const Header = () => {
             Projects
           </a>
           <a
+            onClick={() => handleClick("testimonials")}
+            className={`cursor-pointer transition-colors duration-300 ${
+              active === "testimonials" ? "text-orange-500 font-semibold" : "text-white hover:text-orange-400"
+            }`}
+          >
+            Testimonials
+          </a>
+          <a
             onClick={() => handleClick("contact")}
-            className="font-bold py-3 px-5 text-center rounded-full bg-gradient-to-r from-orange-700 via-orange-500 to-orange-300 hover:from-orange-300 hover:via-orange-500 hover:to-orange-700 transition-colors duration-300"
+            className="cursor-pointerfont-bold py-3 px-5 text-center rounded-full bg-gradient-to-r from-orange-700 via-orange-500 to-orange-300 hover:from-orange-300 hover:via-orange-500 hover:to-orange-700 transition-colors duration-300"
           >
             Hire Me!
           </a>
