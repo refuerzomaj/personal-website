@@ -126,7 +126,7 @@ const Projects = () => {
         <div className="flex justify-center mt-10">
           <button
             onClick={() => setShowAll(!showAll)}
-            className="px-6 py-3 rounded-full text-white font-semibold bg-gradient-to-r from-orange-700 via-orange-500 to-orange-300 hover:from-orange-300 hover:via-orange-500 hover:to-orange-700 transition-all duration-300"
+            className="px-6 py-3 rounded-full text-white font-semibold bg-gradient-to-r from-orange-700 via-orange-500 to-orange-300 hover:from-orange-300 hover:via-orange-500 hover:to-orange-700 hover:cursor-pointer transition-all duration-300"
           >
             {showAll ? "See Less" : "See More"}
           </button>

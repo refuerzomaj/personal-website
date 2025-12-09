@@ -4,7 +4,7 @@ import { TypeAnimation } from "react-type-animation";
 import { FaLinkedinIn, FaGithub, FaHtml5, FaCss3, FaPhp, FaReact, FaWordpress, FaElementor, FaSquareGit, FaSquareGithub } from "react-icons/fa6";
 import { TbBrandFiverr, TbWorldWww, TbBrandJavascript } from "react-icons/tb";
 import { BiLogoGmail, BiLogoJquery } from "react-icons/bi";
-import { SiMysql, SiTailwindcss } from "react-icons/si";
+import { SiUpwork } from "react-icons/si";
 import { PiDownloadSimpleBold } from "react-icons/pi";
 import Counter from "./counter";
 
@@ -37,11 +37,12 @@ const hero = () => {
                         <p className='text-white text-[20px] leading-8 sm:w-full md:w-110 xl:w-130'>I specialize in creating functional and scalable web solutions that elevate user experiences and drive results.</p>
                     </div>
                     <div className="flex justify-start gap-4 items-center h-full ">
-                        <a href="https://www.linkedin.com/in/jomardon-gabitanan-6a2989223/" className="rounded-full border-1 w-10 h-10 border-white p-2.5 hover:bg-orange-500 hover:border-orange-500 hover:text-white transition-colors duration-300"><FaLinkedinIn className="text-white"/></a>
-                        <a href="https://github.com/refuerzomaj" className="rounded-full border-1 w-10 h-10 border-white p-2.5 hover:bg-orange-500 hover:border-orange-500 hover:text-white transition-colors duration-300"><FaGithub className="text-white"/></a>
-                        <a href="https://pro.fiverr.com/s/WE1r77l" className="rounded-full border-1 w-10 h-10 border-white p-2.5 hover:bg-orange-500 hover:border-orange-500 hover:text-white transition-colors duration-300"><TbBrandFiverr className="text-white"/></a>
-                        <a href="mailto:gabitanan.jomardon@gmail.com" className="rounded-full border-1 w-10 h-10 border-white p-2.5 hover:bg-orange-500 hover:border-orange-500 hover:text-white transition-colors duration-300"><BiLogoGmail className="text-white"/></a>
-                        <a href="http://" className="flex items-center justify-center gap-2 text-white rounded-full border-1 border-white py-4 px-9 hover:bg-orange-500 hover:border-orange-500 transition-colors duration-300">Download CV <PiDownloadSimpleBold className="text-white"/></a>
+                        <a href="https://www.linkedin.com/in/jomardon-gabitanan-6a2989223/" target="_blank" className="rounded-full border-1 w-10 h-10 border-white p-2.5 hover:bg-orange-500 hover:border-orange-500 hover:text-white transition-colors duration-300"><FaLinkedinIn className="text-white"/></a>
+                        <a href="https://github.com/refuerzomaj" target="_blank" className="rounded-full border-1 w-10 h-10 border-white p-2.5 hover:bg-orange-500 hover:border-orange-500 hover:text-white transition-colors duration-300"><FaGithub className="text-white"/></a>
+                        <a href="https://pro.fiverr.com/s/WE1r77l" target="_blank" className="rounded-full border-1 w-10 h-10 border-white p-2.5 hover:bg-orange-500 hover:border-orange-500 hover:text-white transition-colors duration-300"><TbBrandFiverr className="text-white"/></a>
+                        <a href="https://www.upwork.com/freelancers/~01457dbad7acf5e753" target="_blank" className="rounded-full border-1 w-10 h-10 border-white p-2.5 hover:bg-orange-500 hover:border-orange-500 hover:text-white transition-colors duration-300"><SiUpwork className="text-white"/></a>
+                        <a href="mailto:gabitanan.jomardon@gmail.com" target="_blank" className="rounded-full border-1 w-10 h-10 border-white p-2.5 hover:bg-orange-500 hover:border-orange-500 hover:text-white transition-colors duration-300"><BiLogoGmail className="text-white"/></a>
+                        <a href="http://" target="_blank" className="flex items-center justify-center gap-2 text-white rounded-full border-1 border-white py-4 px-9 hover:bg-orange-500 hover:border-orange-500 transition-colors duration-300">Download CV <PiDownloadSimpleBold className="text-white"/></a>
                     </div>
                 </div>
 
