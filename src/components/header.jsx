@@ -19,12 +19,23 @@ const Header = () => {
   // Scroll spy: highlight active menu when scrolling
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ["home", "about", "skills", "projects", "testimonials", "contact"];
+      const sections = [
+        "home",
+        "about",
+        "skills",
+        "projects",
+        "testimonials",
+        "contact",
+      ];
       const scrollY = window.scrollY + 100; // offset for header height
 
       for (let id of sections) {
         const section = document.getElementById(id);
-        if (section && scrollY >= section.offsetTop && scrollY < section.offsetTop + section.offsetHeight) {
+        if (
+          section &&
+          scrollY >= section.offsetTop &&
+          scrollY < section.offsetTop + section.offsetHeight
+        ) {
           setActive(id);
         }
       }
@@ -70,23 +81,35 @@ const Header = () => {
           <a onClick={() => handleClick("home")} className={linkClass("home")}>
             Home
           </a>
-          <a onClick={() => handleClick("about")} className={linkClass("about")}>
+          <a
+            onClick={() => handleClick("about")}
+            className={linkClass("about")}
+          >
             About Me
           </a>
-          <a onClick={() => handleClick("skills")} className={linkClass("skills")}>
+          <a
+            onClick={() => handleClick("skills")}
+            className={linkClass("skills")}
+          >
             Skills
           </a>
-          <a onClick={() => handleClick("projects")} className={linkClass("projects")}>
+          <a
+            onClick={() => handleClick("projects")}
+            className={linkClass("projects")}
+          >
             Projects
           </a>
-          <a onClick={() => handleClick("testimonials")} className={linkClass("testimonials")}>
+          <a
+            onClick={() => handleClick("testimonials")}
+            className={linkClass("testimonials")}
+          >
             Testimonials
           </a>
           <a
-            onClick={() => handleClick("contact")}
-            className="font-bold py-3 px-7 rounded-full text-white bg-gradient-to-r from-orange-700 via-orange-500 to-orange-300 hover:from-orange-300 hover:via-orange-500 hover:to-orange-700 transition-colors duration-300"
+            onClick={() => handleClick("contactform")}
+            className="font-bold py-3 px-7 rounded-full cursor-pointer text-white bg-gradient-to-r from-orange-700 via-orange-500 to-orange-300 hover:from-orange-300 hover:via-orange-500 hover:to-orange-700 transition-colors duration-300"
           >
-            Hire Me!
+            Contact Me!
           </a>
         </nav>
 
@@ -107,7 +130,9 @@ const Header = () => {
       >
         {/* Close Button */}
         <div className="flex justify-between items-center px-4 py-4 border-b border-gray-700">
-          <span className="text-xl font-bold text-orange-500 cursor-pointer">Menu</span>
+          <span className="text-xl font-bold text-orange-500 cursor-pointer">
+            Menu
+          </span>
           <button
             onClick={() => setMenuOpen(false)}
             className="text-2xl text-orange-500 cursor-pointer"
@@ -121,7 +146,9 @@ const Header = () => {
           <a
             onClick={() => handleClick("home")}
             className={`cursor-pointer transition-colors duration-300 ${
-              active === "home" ? "text-orange-500 font-semibold" : "text-white hover:text-orange-400"
+              active === "home"
+                ? "text-orange-500 font-semibold"
+                : "text-white hover:text-orange-400"
             }`}
           >
             Home
@@ -129,7 +156,9 @@ const Header = () => {
           <a
             onClick={() => handleClick("about")}
             className={`cursor-pointer transition-colors duration-300 ${
-              active === "about" ? "text-orange-500 font-semibold" : "text-white hover:text-orange-400"
+              active === "about"
+                ? "text-orange-500 font-semibold"
+                : "text-white hover:text-orange-400"
             }`}
           >
             About Me
@@ -137,7 +166,9 @@ const Header = () => {
           <a
             onClick={() => handleClick("skills")}
             className={`cursor-pointer transition-colors duration-300 ${
-              active === "skills" ? "text-orange-500 font-semibold" : "text-white hover:text-orange-400"
+              active === "skills"
+                ? "text-orange-500 font-semibold"
+                : "text-white hover:text-orange-400"
             }`}
           >
             Skills
@@ -145,7 +176,9 @@ const Header = () => {
           <a
             onClick={() => handleClick("projects")}
             className={`cursor-pointer transition-colors duration-300 ${
-              active === "projects" ? "text-orange-500 font-semibold" : "text-white hover:text-orange-400"
+              active === "projects"
+                ? "text-orange-500 font-semibold"
+                : "text-white hover:text-orange-400"
             }`}
           >
             Projects
@@ -153,16 +186,18 @@ const Header = () => {
           <a
             onClick={() => handleClick("testimonials")}
             className={`cursor-pointer transition-colors duration-300 ${
-              active === "testimonials" ? "text-orange-500 font-semibold" : "text-white hover:text-orange-400"
+              active === "testimonials"
+                ? "text-orange-500 font-semibold"
+                : "text-white hover:text-orange-400"
             }`}
           >
             Testimonials
           </a>
           <a
-            onClick={() => handleClick("contact")}
+            onClick={() => handleClick("contactform")}
             className="cursor-pointerfont-bold py-3 px-5 text-center rounded-full bg-gradient-to-r from-orange-700 via-orange-500 to-orange-300 hover:from-orange-300 hover:via-orange-500 hover:to-orange-700 transition-colors duration-300"
           >
-            Hire Me!
+            Contact Me!
           </a>
         </nav>
       </div>
