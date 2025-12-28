@@ -26,6 +26,11 @@ const testimonials = [
     name: "Abavabsolutions",
     message: "Did a fantastic job!",
   },
+  {
+    image: "",
+    name: "MG Computing",
+    message: "Great service!",
+  },
 ];
 
 export default function Testimonials() {
@@ -44,13 +49,17 @@ export default function Testimonials() {
   return (
     <section
       id="testimonials"
-      className="py-20 bg-gradient-to-tl text-center from-gray-900 via-black to-gray-900"
+      className="py-20 bg-gradient-to-tl text-center animate-slide-in-bottom  from-gray-900 via-black to-gray-900"
     >
       {/* Title */}
-      <h2 className="text-3xl font-bold mb-2 text-white">
-        What My Clients Say
-      </h2>
-      <p className="text-gray-300 mb-10">Trusted by professionals worldwide</p>
+      <div className="max-w-[1000px] mx-auto h-full flex flex-col items-center justify-items-start px-20">
+        <div className="flex flex-col items-start justify-items-start w-full p">
+          <h2 className="text-3xl pb-8 sm:text-5xl font-extrabold bg-gradient-to-r from-orange-400 via-white to-orange-400 text-transparent bg-clip-text drop-shadow-lg">
+            Testimonials
+          </h2>
+        </div>
+      </div>
+
       <div className="max-w-xl mx-auto relative px-12 ">
         {/* Card */}
         <div className="bg-white cursor-pointer rounded-2xl shadow-xl p-8 min-h-[340px] flex flex-col justify-between transition-all duration-500">
