@@ -14,7 +14,7 @@ function contactform() {
     });
 
     const data = await response.json();
-    setResult(data.success ? "Success!" : "Error");
+    setResult(data.success ? "Message send successfully!" : "Error");
   };
 
   return (
@@ -61,7 +61,7 @@ function contactform() {
               className="w-full border px-3 py-2 rounded border-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
             />
 
-            <p>{result}</p>
+            <p className="text-green-600">{result}</p>
 
             <button
               type="submit"
