@@ -1,5 +1,20 @@
 import React from "react";
 import Testimonials from "./testimonials";
+import {
+  FaLinkedinIn,
+  FaGithub,
+  FaHtml5,
+  FaCss3,
+  FaPhp,
+  FaReact,
+  FaWordpress,
+  FaElementor,
+  FaSquareGit,
+  FaSquareGithub,
+} from "react-icons/fa6";
+import { TbBrandFiverr, TbWorldWww, TbBrandJavascript } from "react-icons/tb";
+import { BiLogoGmail, BiLogoJquery } from "react-icons/bi";
+import { SiUpwork } from "react-icons/si";
 
 const Footer = () => {
   return (
@@ -58,27 +73,41 @@ const Footer = () => {
           {/* Social Media Links */}
           <div>
             <h3 className="text-lg font-semibold text-white mb-4">Follow Us</h3>
-            <div className="flex space-x-4">
+            <div className="flex justify-start gap-4 h-full ">
               <a
-                href="#"
-                className="hover:text-white transition"
-                aria-label="Facebook"
+                href="https://www.linkedin.com/in/jomardon-gabitanan-6a2989223/"
+                target="_blank"
+                className="rounded-full border-1 w-10 h-10 border-white p-2.5 hover:bg-orange-500 hover:border-orange-500 hover:text-white transition-colors duration-300"
               >
-                Facebook
+                <FaLinkedinIn className="text-white" />
               </a>
               <a
-                href="#"
-                className="hover:text-white transition"
-                aria-label="Twitter"
+                href="https://github.com/refuerzomaj"
+                target="_blank"
+                className="rounded-full border-1 w-10 h-10 border-white p-2.5 hover:bg-orange-500 hover:border-orange-500 hover:text-white transition-colors duration-300"
               >
-                Twitter
+                <FaGithub className="text-white" />
               </a>
               <a
-                href="#"
-                className="hover:text-white transition"
-                aria-label="Instagram"
+                href="https://pro.fiverr.com/s/WE1r77l"
+                target="_blank"
+                className="rounded-full border-1 w-10 h-10 border-white p-2.5 hover:bg-orange-500 hover:border-orange-500 hover:text-white transition-colors duration-300"
               >
-                Instagram
+                <TbBrandFiverr className="text-white" />
+              </a>
+              <a
+                href="https://www.upwork.com/freelancers/~01457dbad7acf5e753"
+                target="_blank"
+                className="rounded-full border-1 w-10 h-10 border-white p-2.5 hover:bg-orange-500 hover:border-orange-500 hover:text-white transition-colors duration-300"
+              >
+                <SiUpwork className="text-white" />
+              </a>
+              <a
+                href="mailto:gabitanan.jomardon@gmail.com"
+                target="_blank"
+                className="rounded-full border-1 w-10 h-10 border-white p-2.5 hover:bg-orange-500 hover:border-orange-500 hover:text-white transition-colors duration-300"
+              >
+                <BiLogoGmail className="text-white" />
               </a>
             </div>
           </div>
