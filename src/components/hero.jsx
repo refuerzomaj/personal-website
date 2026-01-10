@@ -95,13 +95,13 @@ const hero = () => {
             >
               <BiLogoGmail className="text-white" />
             </a>
-            <a
-              href="#contactform"
+            {/* <a
+              href="http://"
+              target="_blank"
               className="flex items-center justify-center gap-2 text-white rounded-full border-1 border-white py-4 px-9 hover:bg-orange-500 hover:border-orange-500 transition-colors duration-300"
             >
-              Contact Me!
-              {/* Download CV <PiDownloadSimpleBold className="text-white" /> */}
-            </a>
+              Download CV <PiDownloadSimpleBold className="text-white" />
+            </a> */}
           </div>
         </div>
 
