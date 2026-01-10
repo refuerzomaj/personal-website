@@ -15,12 +15,12 @@ const Projects = () => {
   const [showAll, setShowAll] = useState(false);
 
   const cards = [
-    {
-      image: image1,
-      title: "The Original Raw Food Slow Feeder",
-      link: "https://rawfoodslowfeeder.com/",
-      tags: ["WordPress", "Elementor Pro", "Woocommerce", "CSS", "jQuery", "Google Tag Manager", "Google Analytics"],
-    },
+    // {
+    //   image: image1,
+    //   title: "The Original Raw Food Slow Feeder",
+    //   link: "https://rawfoodslowfeeder.com/",
+    //   tags: ["WordPress", "Elementor Pro", "Woocommerce", "CSS", "jQuery", "Google Tag Manager", "Google Analytics"],
+    // },
     {
       image: image2,
       title: "Juvimor Construction & Trading Services",
@@ -70,7 +70,15 @@ const Projects = () => {
       image: image8,
       title: "Keystone Invest",
       link: "https://keystone-invest.co.uk",
-      tags: ["WordPress", "Elementor Pro", "CSS", "jQuery", "PHP", "Advance Custom Fields", "Custom Theme"],
+      tags: [
+        "WordPress",
+        "Elementor Pro",
+        "CSS",
+        "jQuery",
+        "PHP",
+        "Advance Custom Fields",
+        "Custom Theme",
+      ],
     },
     {
       image: image9,
@@ -116,7 +124,9 @@ const Projects = () => {
                     </p>
                   ))}
                 </div>
-                <h2 className="text-2xl text-white font-extrabold">{card.title}</h2>
+                <h2 className="text-2xl text-white font-extrabold">
+                  {card.title}
+                </h2>
               </div>
             </a>
           ))}
