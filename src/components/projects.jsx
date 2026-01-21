@@ -108,7 +108,10 @@ const Projects = () => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <div className="w-full mx-auto grid gap-6 border p-6 bg-neutral-950/80 border-slate-600/20 rounded-4xl hover:bg-orange-700/80 hover:border-orange-500/90 cursor-pointer duration-300">
+              <div
+                className="w-full mx-auto grid gap-6 border p-6 bg-neutral-950/80 border-slate-600/20 rounded-4xl hover:-translate-y-2 hover:scale-[1.02]
+               hover:shadow-[0_25px_50px_rgba(0,0,0,0.7)] hover:bg-orange-700/80 hover:border-orange-500/90 cursor-pointer duration-300"
+              >
                 <img
                   className="rounded-t-3xl w-full object-cover"
                   src={card.image}

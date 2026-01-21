@@ -108,11 +108,13 @@ const hero = () => {
         {/* Right Section */}
         <div className="order-1 md:order-2 animate-slide-in-right col-span-1 sm:col-span-2 md:col-span-2 xl:col-span-1 flex justify-center rows-start-1">
           <div className="w-100 h-100 rounded-full">
-            <img
-              className="w-[800px] rounded-3xl border-2 bg-neutral-950/80 border-slate-600/40 hover:border-orange-600 hover:border-2 hover:cursor-pointer duration-500 bg-blend-color md:w-[300px] lg:w-[500px]"
-              src={myPhoto}
-              alt="my photo"
-            />
+            <center>
+              <img
+                className="w-[380px] rounded-3xl border-2 bg-neutral-950/80 border-slate-600/40 hover:border-orange-600 hover:border-2 hover:cursor-pointer duration-500 bg-blend-color md:w-[300px] lg:w-[500px]"
+                src={myPhoto}
+                alt="my photo"
+              />
+            </center>
           </div>
         </div>
       </div>
