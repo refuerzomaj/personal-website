@@ -1,10 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 /* =======================
    IMPORT CERTIFICATES (IMAGES ONLY)
 ======================= */
 import certWordpress from "../assets/certificates/wordpress.jpg";
-// import certCyber from "../assets/certificates/cyber.jpg";
+import certWordpress2 from "../assets/certificates/wordpress2.jpg";
 import certCreative from "../assets/certificates/webdesign.png";
 import certWebDev from "../assets/certificates/webdevelopment.png";
 import certPython from "../assets/certificates/python.png";
@@ -18,17 +18,17 @@ import certJava from "../assets/certificates/java.png";
 ======================= */
 const certificates = [
   {
+    date: "January 22, 2026",
+    title: "Unlock WordPress Power: Build Themes, Plugins & FSE Sites",
+    issuer: "Udemy",
+    image: certWordpress2,
+  },
+  {
     date: "April 02, 2024",
     title: "Become a Wordpress Developer: Unlocking Power with Code",
     issuer: "Udemy",
     image: certWordpress,
   },
-  //   {
-  //     date: "Sep 12, 2023",
-  //     title: "Certificate of Attendance in Cybersecurity",
-  //     issuer: "Xaltius Pte Ltd",
-  //     image: certCyber,
-  //   },
   {
     date: "Nov 12 – Dec 07, 2021",
     title: "Certificate of Completion in Creative Web Design",
@@ -111,25 +111,43 @@ const CertificateCard = ({ cert, onClick }) => (
 );
 
 /* =======================
-   MODAL
+   MODAL (WITH 300ms DELAY)
 ======================= */
 const CertificateModal = ({ cert, onClose }) => {
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    if (cert) {
+      setTimeout(() => setVisible(true), 10); // OPEN delay
+    }
+  }, [cert]);
+
   if (!cert) return null;
 
   return (
     <div
-      className="fixed inset-0 z-50 flex items-center justify-center bg-black/90"
-      onClick={onClose}
+      className={`fixed inset-0 z-50 flex items-center justify-center bg-black/90
+                  transition-opacity duration-300
+                  ${visible ? "opacity-100" : "opacity-0"}`}
+      onClick={() => {
+        setVisible(false);
+        setTimeout(onClose, 300); // CLOSE delay
+      }}
     >
       <div
-        className="relative max-w-6xl w-full mx-6"
+        className={`relative max-w-6xl w-full mx-6
+                    transform transition-all duration-300
+                    ${visible ? "scale-100 opacity-100" : "scale-95 opacity-0"}`}
         onClick={(e) => e.stopPropagation()}
       >
         <button
-          onClick={onClose}
+          onClick={() => {
+            setVisible(false);
+            setTimeout(onClose, 300);
+          }}
           className="absolute -top-4 -right-4 w-10 h-10 
                      bg-black text-white rounded-full border
-                     border-white/20 hover:bg-orange-500 transition"
+                     border-white/20 cursor-pointer hover:bg-orange-500 transition"
         >
           ✕
         </button>
@@ -152,7 +170,6 @@ const Certificate = () => {
 
   return (
     <div className="bg-black py-10 px-10 h-full grid gap-16" id="about">
-      {/* CERTIFICATES */}
       <div className="max-w-[1000px] mx-auto grid gap-6 animate-slide-in-top">
         <h1 className="text-3xl sm:text-5xl font-extrabold bg-gradient-to-r from-orange-400 via-white to-orange-400 text-transparent bg-clip-text">
           Certificates
