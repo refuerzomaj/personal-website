@@ -130,8 +130,8 @@ const Header = () => {
       >
         {/* Close Button */}
         <div className="flex justify-between items-center px-4 py-4 border-b border-gray-700">
-          <span className="text-xl font-bold text-orange-500 cursor-pointer">
-            Menu
+          <span className="text-xl font-bold text-white cursor-pointer">
+            JG
           </span>
           <button
             onClick={() => setMenuOpen(false)}
