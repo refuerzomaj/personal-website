@@ -82,7 +82,7 @@ const CertificateModal = ({ cert, onClose }) => {
                     ${visible ? "scale-100 opacity-100" : "scale-95 opacity-0"}`}
         onClick={(e) => e.stopPropagation()}
       >
-        <button
+        {/* <button
           onClick={() => {
             setVisible(false);
             setTimeout(onClose, 300);
@@ -93,7 +93,7 @@ const CertificateModal = ({ cert, onClose }) => {
                      hover:bg-orange-500 transition"
         >
           ✕
-        </button>
+        </button> */}
 
         <img
           src={cert.image}
