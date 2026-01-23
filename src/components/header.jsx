@@ -77,7 +77,7 @@ const Header = () => {
         </div>
 
         {/* Desktop Menu */}
-        <nav className="hidden md:flex gap-10 items-center">
+        <nav className="hidden lg:flex gap-10 items-center">
           <a onClick={() => handleClick("home")} className={linkClass("home")}>
             Home
           </a>
@@ -116,7 +116,7 @@ const Header = () => {
         {/* Mobile Menu Button */}
         <button
           onClick={() => setMenuOpen(true)}
-          className="md:hidden text-2xl text-orange-500 cursor-pointer"
+          className="lg:hidden text-2xl text-orange-500 cursor-pointer"
         >
           <FaBars />
         </button>
@@ -126,7 +126,7 @@ const Header = () => {
       <div
         className={`fixed top-0 left-0 h-full w-64 bg-neutral-900 text-white shadow-lg transform ${
           menuOpen ? "translate-x-0" : "-translate-x-full"
-        } transition-transform duration-300 ease-in-out z-50 md:hidden`}
+        } transition-transform duration-300 ease-in-out z-50 lg:hidden`}
       >
         {/* Close Button */}
         <div className="flex justify-between items-center px-4 py-4 border-b border-gray-700">
@@ -206,7 +206,7 @@ const Header = () => {
       {menuOpen && (
         <div
           onClick={() => setMenuOpen(false)}
-          className="fixed inset-0 bg-black opacity-40 z-40 md:hidden"
+          className="fixed inset-0 bg-black opacity-40 z-40 lg:hidden"
         ></div>
       )}
     </header>
