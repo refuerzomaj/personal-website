@@ -110,13 +110,10 @@ const SkillModal = ({ skill, onClose }) => {
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
-    if (skill) {
-      setTimeout(() => setVisible(true), 10); // OPEN delay
-    }
+    if (skill) setTimeout(() => setVisible(true), 10); // OPEN delay
   }, [skill]);
 
   if (!skill) return null;
-
   const Icon = skill.icon;
 
   return (
@@ -130,16 +127,16 @@ const SkillModal = ({ skill, onClose }) => {
     >
       <div
         className="relative bg-neutral-950 border border-orange-500/40 
-                      rounded-3xl p-10 max-w-md w-full text-center"
+                    rounded-3xl p-10 max-w-md w-full text-center"
       >
-        <button
+        {/* <button
           onClick={onClose}
           className="absolute -top-4 -right-4 w-10 h-10 
                      bg-black text-white rounded-full border
                      border-white/20 cursor-pointer hover:bg-orange-500 transition"
         >
           ✕
-        </button>
+        </button> */}
 
         <Icon className="text-orange-400 text-8xl mx-auto mb-4" />
 
@@ -161,7 +158,7 @@ const SkillCard = ({ skill, onClick }) => {
   return (
     <div
       onClick={() => onClick(skill)}
-      className="group relative w-45 h-45 lg:w-32 lg:h-32 
+      className="group relative w-42 h-42 lg:w-32 lg:h-32 
                  bg-neutral-950/90 backdrop-blur-md rounded-xl p-6 
                  border border-slate-900/40 shadow-lg text-white 
                  flex flex-col items-center justify-center
@@ -170,7 +167,7 @@ const SkillCard = ({ skill, onClick }) => {
                  hover:bg-orange-700/80 hover:border-orange-500/90
                  cursor-pointer transition"
     >
-      <Icon className="text-white text-9xl lg:text-7xl mb-2" />
+      <Icon className="text-white text-8xl lg:text-7xl mb-2" />
       <span className="text-base font-semibold">{skill.level}</span>
 
       {/* Tooltip */}
@@ -202,7 +199,11 @@ const Skills = () => {
           Skills & Technologies
         </h2>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 mt-10">
+        {/* Responsive Grid */}
+        <div
+          className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 mt-10
+                       justify-items-center max-[350px]:grid-cols-1"
+        >
           {skillsData.map((skill, index) => (
             <SkillCard key={index} skill={skill} onClick={setActiveSkill} />
           ))}
