@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { TypeAnimation } from "react-type-animation";
 import {
   FaHtml5,
@@ -19,194 +19,199 @@ import {
   SiGoogletagmanager,
 } from "react-icons/si";
 
-const skills = () => {
+const skillsData = [
+  {
+    name: "HTML5",
+    level: "90%",
+    icon: FaHtml5,
+    description: "Semantic HTML, accessibility, SEO-friendly structure",
+  },
+  {
+    name: "CSS3",
+    level: "90%",
+    icon: FaCss3,
+    description: "Responsive layouts, Flexbox, Grid, animations",
+  },
+  {
+    name: "JavaScript",
+    level: "90%",
+    icon: TbBrandJavascript,
+    description: "ES6+, DOM manipulation, async logic, APIs",
+  },
+  {
+    name: "jQuery",
+    level: "90%",
+    icon: BiLogoJquery,
+    description: "DOM traversal, animations, legacy support",
+  },
+  {
+    name: "PHP",
+    level: "90%",
+    icon: FaPhp,
+    description: "Backend logic, WordPress development, APIs",
+  },
+  {
+    name: "MySQL",
+    level: "90%",
+    icon: SiMysql,
+    description: "Database design, queries, optimization",
+  },
+  {
+    name: "Git",
+    level: "90%",
+    icon: FaSquareGit,
+    description: "Version control, branching, collaboration",
+  },
+  {
+    name: "GitHub",
+    level: "90%",
+    icon: FaSquareGithub,
+    description: "Repositories, CI workflows, team collaboration",
+  },
+  {
+    name: "WordPress",
+    level: "90%",
+    icon: FaWordpress,
+    description: "Custom themes, plugins, WooCommerce",
+  },
+  {
+    name: "Elementor Pro",
+    level: "90%",
+    icon: FaElementor,
+    description: "Advanced layouts, dynamic content, forms",
+  },
+  {
+    name: "React",
+    level: "90%",
+    icon: FaReact,
+    description: "Components, hooks, state management",
+  },
+  {
+    name: "Tailwind CSS",
+    level: "90%",
+    icon: SiTailwindcss,
+    description: "Utility-first styling, responsive UI",
+  },
+  {
+    name: "Google Tag Manager",
+    level: "90%",
+    icon: SiGoogletagmanager,
+    description: "Tag deployment, analytics tracking",
+  },
+  {
+    name: "Google Analytics",
+    level: "90%",
+    icon: SiGoogleanalytics,
+    description: "Traffic analysis, conversion tracking",
+  },
+];
+
+const SkillModal = ({ skill, onClose }) => {
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    if (skill) {
+      setTimeout(() => setVisible(true), 10); // OPEN delay
+    }
+  }, [skill]);
+
+  if (!skill) return null;
+
+  const Icon = skill.icon;
+
   return (
     <div
-      className="bg-gradient-to-tl from-gray-900 via-black to-gray-900"
-      id="skills"
+      className={`fixed inset-0 z-50 bg-black/80 flex items-center justify-center transition-opacity duration-300
+                  ${visible ? "opacity-100" : "opacity-0"}`}
+      onClick={() => {
+        setVisible(false);
+        setTimeout(onClose, 300); // CLOSE delay
+      }}
     >
-      <div className="max-w-[1000px] mx-auto h-full animate-slide-in-bottom flex flex-col items-center justify-items-start p-20">
-        <div className="flex flex-col items-start justify-items-start w-full">
-          <h2
-            className="text-3xl sm:text-5xl font-extrabold 
-                     bg-gradient-to-r from-orange-400 via-white to-orange-400
-                     text-transparent bg-clip-text drop-shadow-lg"
-          >
-            Skills & Technologies
-          </h2>
-        </div>
+      <div
+        className="relative bg-neutral-950 border border-orange-500/40 
+                      rounded-3xl p-10 max-w-md w-full text-center"
+      >
+        <button
+          onClick={onClose}
+          className="absolute -top-4 -right-4 w-10 h-10 
+                     bg-black text-white rounded-full border
+                     border-white/20 cursor-pointer hover:bg-orange-500 transition"
+        >
+          ✕
+        </button>
 
-        <div className="h-full p-6">
-          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 justify-center gap-8 max-w-7xl mx-auto">
-            <div
-              className="group relative w-45 h-45 lg:w-32 lg:h-32 bg-neutral-950/90 backdrop-blur-md rounded-xl p-6 border border-slate-900/40 shadow-lg text-white flex flex-col items-center justify-center hover:-translate-y-2 hover:scale-[1.02]
-               hover:shadow-[0_25px_50px_rgba(0,0,0,0.7)] hover:bg-orange-700/80 hover:border-orange-500/90 hover:cursor-pointer hover:p-1 lg:hover:p-3 transition"
-            >
-              <FaHtml5 className="text-white text-9xl lg:text-7xl mb-2" />
-              <span className="text-base font-semibold">90%</span>
-              <div className="absolute bottom-full mb-2 px-3 py-1 text-sm text-white bg-black rounded opacity-0 group-hover:opacity-100 transition whitespace-nowrap">
-                HTML5
-              </div>
-            </div>
+        <Icon className="text-orange-400 text-8xl mx-auto mb-4" />
 
-            <div
-              className="group relative w-45 h-45 lg:w-32 lg:h-32 bg-neutral-950/70 backdrop-blur-md rounded-xl p-6 border border-slate-900/40 shadow-lg text-white flex flex-col items-center justify-center hover:-translate-y-2 hover:scale-[1.02]
-               hover:shadow-[0_25px_50px_rgba(0,0,0,0.7)] hover:bg-orange-700/80 hover:border-orange-500/90 hover:cursor-pointer hover:p-1 lg:hover:p-3 transition"
-            >
-              <FaCss3 className="text-white text-9xl lg:text-7xl mb-2" />
-              <span className="text-base font-semibold">90%</span>
-              <div className="absolute bottom-full mb-2 px-3 py-1 text-sm text-white bg-black rounded opacity-0 group-hover:opacity-100 transition whitespace-nowrap">
-                CSS3
-              </div>
-            </div>
+        <h2 className="text-3xl font-extrabold text-white">{skill.name}</h2>
 
-            <div
-              className="group relative w-45 h-45 lg:w-32 lg:h-32 bg-neutral-950/70 backdrop-blur-md rounded-xl p-6 border border-slate-900/40 shadow-lg text-white flex flex-col items-center justify-center hover:-translate-y-2 hover:scale-[1.02]
-               hover:shadow-[0_25px_50px_rgba(0,0,0,0.7)] hover:bg-orange-700/80 hover:border-orange-500/90 hover:cursor-pointer hover:p-1 lg:hover:p-3 transition"
-            >
-              <TbBrandJavascript className="text-white text-9xl lg:text-7xl mb-2" />
-              <span className="text-base font-semibold">90%</span>
-              <div className="absolute bottom-full mb-2 px-3 py-1 text-sm text-white bg-black rounded opacity-0 group-hover:opacity-100 transition whitespace-nowrap">
-                Javascript
-              </div>
-            </div>
+        <p className="text-orange-400 text-xl font-bold mt-2">
+          Proficiency: {skill.level}
+        </p>
 
-            <div
-              className="group relative w-45 h-45 lg:w-32 lg:h-32 bg-neutral-950/70 backdrop-blur-md rounded-xl p-6 border border-slate-900/40 shadow-lg text-white flex flex-col items-center justify-center hover:-translate-y-2 hover:scale-[1.02]
-               hover:shadow-[0_25px_50px_rgba(0,0,0,0.7)] hover:bg-orange-700/80 hover:border-orange-500/90 hover:cursor-pointer hover:p-1 lg:hover:p-3 transition"
-            >
-              <BiLogoJquery className="text-white text-9xl lg:text-7xl mb-2" />
-              <span className="text-base font-semibold">90%</span>
-              <div className="absolute bottom-full mb-2 px-3 py-1 text-sm text-white bg-black rounded opacity-0 group-hover:opacity-100 transition whitespace-nowrap">
-                JQuery
-              </div>
-            </div>
-
-            <div
-              className="group relative w-45 h-45 lg:w-32 lg:h-32 bg-neutral-950/70 backdrop-blur-md rounded-xl p-6 border border-slate-900/40 shadow-lg text-white flex flex-col items-center justify-center hover:-translate-y-2 hover:scale-[1.02]
-               hover:shadow-[0_25px_50px_rgba(0,0,0,0.7)] hover:bg-orange-700/80 hover:border-orange-500/90 hover:cursor-pointer hover:p-1 lg:hover:p-3 transition"
-            >
-              <TbBrandJavascript className="text-white text-9xl lg:text-7xl mb-2" />
-              <span className="text-base font-semibold">90%</span>
-              <div className="absolute bottom-full mb-2 px-3 py-1 text-sm text-white bg-black rounded opacity-0 group-hover:opacity-100 transition whitespace-nowrap">
-                Javascript
-              </div>
-            </div>
-
-            <div
-              className="group relative w-45 h-45 lg:w-32 lg:h-32 bg-neutral-950/70 backdrop-blur-md rounded-xl p-6 border border-slate-900/40 shadow-lg text-white flex flex-col items-center justify-center hover:-translate-y-2 hover:scale-[1.02]
-               hover:shadow-[0_25px_50px_rgba(0,0,0,0.7)] hover:bg-orange-700/80 hover:border-orange-500/90 hover:cursor-pointer hover:p-1 lg:hover:p-3 transition"
-            >
-              <FaPhp className="text-white text-9xl lg:text-7xlt-7xl mb-2" />
-              <span className="text-base font-semibold">90%</span>
-              <div className="absolute bottom-full mb-2 px-3 py-1 text-sm text-white bg-black rounded opacity-0 group-hover:opacity-100 transition whitespace-nowrap">
-                PHP
-              </div>
-            </div>
-
-            <div
-              className="group relative w-45 h-45 lg:w-32 lg:h-32 bg-neutral-950/70 backdrop-blur-md rounded-xl p-6 border border-slate-900/40 shadow-lg text-white flex flex-col items-center justify-center hover:-translate-y-2 hover:scale-[1.02]
-               hover:shadow-[0_25px_50px_rgba(0,0,0,0.7)] hover:bg-orange-700/80 hover:border-orange-500/90 hover:cursor-pointer hover:p-1 lg:hover:p-3 transition"
-            >
-              <SiMysql className="text-white text-9xl lg:text-7xl mb-2" />
-              <span className="text-base font-semibold">90%</span>
-              <div className="absolute bottom-full mb-2 px-3 py-1 text-sm text-white bg-black rounded opacity-0 group-hover:opacity-100 transition whitespace-nowrap">
-                MySQL
-              </div>
-            </div>
-
-            <div
-              className="group relative w-45 h-45 lg:w-32 lg:h-32 bg-neutral-950/70 backdrop-blur-md rounded-xl p-6 border border-slate-900/40 shadow-lg text-white flex flex-col items-center justify-center hover:-translate-y-2 hover:scale-[1.02]
-               hover:shadow-[0_25px_50px_rgba(0,0,0,0.7)] hover:bg-orange-700/80 hover:border-orange-500/90 hover:cursor-pointer hover:p-1 lg:hover:p-3 transition"
-            >
-              <FaSquareGit className="text-white text-9xl lg:text-7xl mb-2" />
-              <span className="text-base font-semibold">90%</span>
-              <div className="absolute bottom-full mb-2 px-3 py-1 text-sm text-white bg-black rounded opacity-0 group-hover:opacity-100 transition whitespace-nowrap">
-                Git
-              </div>
-            </div>
-
-            <div
-              className="group relative w-45 h-45 lg:w-32 lg:h-32 bg-neutral-950/70 backdrop-blur-md rounded-xl p-6 border border-slate-900/40 shadow-lg text-white flex flex-col items-center justify-center hover:-translate-y-2 hover:scale-[1.02]
-               hover:shadow-[0_25px_50px_rgba(0,0,0,0.7)] hover:bg-orange-700/80 hover:border-orange-500/90 hover:cursor-pointer hover:p-1 lg:hover:p-3 transition"
-            >
-              <FaSquareGithub className="text-white text-9xl lg:text-7xl mb-2" />
-              <span className="text-base font-semibold">90%</span>
-              <div className="absolute bottom-full mb-2 px-3 py-1 text-sm text-white bg-black rounded opacity-0 group-hover:opacity-100 transition whitespace-nowrap">
-                Github
-              </div>
-            </div>
-
-            <div
-              className="group relative w-45 h-45 lg:w-32 lg:h-32 bg-neutral-950/70 backdrop-blur-md rounded-xl p-6 border border-slate-900/40 shadow-lg text-white flex flex-col items-center justify-center hover:-translate-y-2 hover:scale-[1.02]
-               hover:shadow-[0_25px_50px_rgba(0,0,0,0.7)] hover:bg-orange-700/80 hover:border-orange-500/90 hover:cursor-pointer hover:p-1 lg:hover:p-3 transition"
-            >
-              <FaWordpress className="text-white text-9xl lg:text-7xl mb-2" />
-              <span className="text-base font-semibold">90%</span>
-              <div className="absolute bottom-full mb-2 px-3 py-1 text-sm text-white bg-black rounded opacity-0 group-hover:opacity-100 transition whitespace-nowrap">
-                Wordpress
-              </div>
-            </div>
-
-            <div
-              className="group relative w-45 h-45 lg:w-32 lg:h-32 bg-neutral-950/70 backdrop-blur-md rounded-xl p-6 border border-slate-900/40 shadow-lg text-white flex flex-col items-center justify-center hover:-translate-y-2 hover:scale-[1.02]
-               hover:shadow-[0_25px_50px_rgba(0,0,0,0.7)] hover:bg-orange-700/80 hover:border-orange-500/90 hover:cursor-pointer hover:p-1 lg:hover:p-3 transition"
-            >
-              <FaElementor className="text-white text-9xl lg:text-7xl mb-2" />
-              <span className="text-base font-semibold">90%</span>
-              <div className="absolute bottom-full mb-2 px-3 py-1 text-sm text-white bg-black rounded opacity-0 group-hover:opacity-100 transition whitespace-nowrap">
-                Elementor Pro
-              </div>
-            </div>
-
-            <div
-              className="group relative w-45 h-45 lg:w-32 lg:h-32 bg-neutral-950/70 backdrop-blur-md rounded-xl p-6 border border-slate-900/40 shadow-lg text-white flex flex-col items-center justify-center hover:-translate-y-2 hover:scale-[1.02]
-               hover:shadow-[0_25px_50px_rgba(0,0,0,0.7)] hover:bg-orange-700/80 hover:border-orange-500/90 hover:cursor-pointer hover:p-1 lg:hover:p-3 transition"
-            >
-              <FaReact className="text-white text-9xl lg:text-7xl mb-2" />
-              <span className="text-base font-semibold">90%</span>
-              <div className="absolute bottom-full mb-2 px-3 py-1 text-sm text-white bg-black rounded opacity-0 group-hover:opacity-100 transition whitespace-nowrap">
-                React
-              </div>
-            </div>
-
-            <div
-              className="group relative w-45 h-45 lg:w-32 lg:h-32 bg-neutral-950/70 backdrop-blur-md rounded-xl p-6 border border-slate-900/40 shadow-lg text-white flex flex-col items-center justify-center hover:-translate-y-2 hover:scale-[1.02]
-               hover:shadow-[0_25px_50px_rgba(0,0,0,0.7)] hover:bg-orange-700/80 hover:border-orange-500/90 hover:cursor-pointer hover:p-1 lg:hover:p-3 transition"
-            >
-              <SiTailwindcss className="text-white text-9xl lg:text-7xl mb-2" />
-              <span className="text-base font-semibold">90%</span>
-              <div className="absolute bottom-full mb-2 px-3 py-1 text-sm text-white bg-black rounded opacity-0 group-hover:opacity-100 transition whitespace-nowrap">
-                Tailwindcss
-              </div>
-            </div>
-
-            <div
-              className="group relative w-45 h-45 lg:w-32 lg:h-32 bg-neutral-950/70 backdrop-blur-md rounded-xl p-6 border border-slate-900/40 shadow-lg text-white flex flex-col items-center justify-center hover:-translate-y-2 hover:scale-[1.02]
-               hover:shadow-[0_25px_50px_rgba(0,0,0,0.7)] hover:bg-orange-700/80 hover:border-orange-500/90 hover:cursor-pointer hover:p-1 lg:hover:p-3 transition"
-            >
-              <SiGoogletagmanager className="text-white text-9xl lg:text-7xl mb-2" />
-              <span className="text-base font-semibold">90%</span>
-              <div className="absolute bottom-full mb-2 px-3 py-1 text-sm text-white bg-black rounded opacity-0 group-hover:opacity-100 transition whitespace-nowrap">
-                Google Tag Manager
-              </div>
-            </div>
-
-            <div
-              className="group relative w-45 h-45 lg:w-32 lg:h-32 bg-neutral-950/70 backdrop-blur-md rounded-xl p-6 border border-slate-900/40 shadow-lg text-white flex flex-col items-center justify-center hover:-translate-y-2 hover:scale-[1.02]
-               hover:shadow-[0_25px_50px_rgba(0,0,0,0.7)] hover:bg-orange-700/80 hover:border-orange-500/90 hover:cursor-pointer hover:p-1 lg:hover:p-3 transition"
-            >
-              <SiGoogleanalytics className="text-white text-9xl lg:text-7xl mb-2" />
-              <span className="text-base font-semibold">90%</span>
-              <div className="absolute bottom-full mb-2 px-3 py-1 text-sm text-white bg-black rounded opacity-0 group-hover:opacity-100 transition whitespace-nowrap">
-                Google Analytics
-              </div>
-            </div>
-          </div>
-        </div>
+        <p className="text-white/80 mt-4 text-sm">{skill.description}</p>
       </div>
     </div>
   );
 };
 
-export default skills;
+const SkillCard = ({ skill, onClick }) => {
+  const Icon = skill.icon;
+
+  return (
+    <div
+      onClick={() => onClick(skill)}
+      className="group relative w-45 h-45 lg:w-32 lg:h-32 
+                 bg-neutral-950/90 backdrop-blur-md rounded-xl p-6 
+                 border border-slate-900/40 shadow-lg text-white 
+                 flex flex-col items-center justify-center
+                 hover:-translate-y-2 hover:scale-[1.02]
+                 hover:shadow-[0_25px_50px_rgba(0,0,0,0.7)]
+                 hover:bg-orange-700/80 hover:border-orange-500/90
+                 cursor-pointer transition"
+    >
+      <Icon className="text-white text-9xl lg:text-7xl mb-2" />
+      <span className="text-base font-semibold">{skill.level}</span>
+
+      {/* Tooltip */}
+      <div
+        className="absolute bottom-full mb-2 px-3 py-1 text-sm 
+                      text-white bg-black rounded opacity-0 
+                      group-hover:opacity-100 transition whitespace-nowrap"
+      >
+        {skill.name}
+      </div>
+    </div>
+  );
+};
+
+const Skills = () => {
+  const [activeSkill, setActiveSkill] = React.useState(null);
+
+  return (
+    <div
+      className="bg-gradient-to-tl from-gray-900 via-black to-gray-900"
+      id="skills"
+    >
+      <div className="max-w-[1000px] mx-auto p-20">
+        <h2
+          className="text-3xl sm:text-5xl font-extrabold 
+                     bg-gradient-to-r from-orange-400 via-white to-orange-400
+                     text-transparent bg-clip-text"
+        >
+          Skills & Technologies
+        </h2>
+
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 mt-10">
+          {skillsData.map((skill, index) => (
+            <SkillCard key={index} skill={skill} onClick={setActiveSkill} />
+          ))}
+        </div>
+      </div>
+
+      <SkillModal skill={activeSkill} onClose={() => setActiveSkill(null)} />
+    </div>
+  );
+};
+
+export default Skills;
