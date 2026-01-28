@@ -82,7 +82,7 @@ const CertificateCard = ({ cert, onClick }) => (
   <div
     onClick={() => onClick(cert)}
     className="group relative overflow-hidden border p-6 bg-neutral-950/80 
-               border-slate-600/40 rounded-4xl cursor-pointer
+               border-white/10 rounded-4xl cursor-pointer
                transition-all duration-300
                hover:-translate-y-2 hover:scale-[1.02]
                hover:shadow-[0_25px_50px_rgba(0,0,0,0.7)]"

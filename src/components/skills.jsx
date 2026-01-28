@@ -142,9 +142,9 @@ const SkillModal = ({ skill, onClose }) => {
 
         <h2 className="text-3xl font-extrabold text-white">{skill.name}</h2>
 
-        <p className="text-orange-400 text-xl font-bold mt-2">
+        {/* <p className="text-orange-400 text-xl font-bold mt-2">
           Proficiency: {skill.level}
-        </p>
+        </p> */}
 
         <p className="text-white/80 mt-4 text-sm">{skill.description}</p>
       </div>
@@ -160,7 +160,7 @@ const SkillCard = ({ skill, onClick }) => {
       onClick={() => onClick(skill)}
       className="group relative w-42 h-42 lg:w-32 lg:h-32 
                  bg-neutral-950/90 backdrop-blur-md rounded-xl p-6 
-                 border border-slate-900/40 shadow-lg text-white 
+                 border border-white/10 shadow-lg text-white 
                  flex flex-col items-center justify-center
                  hover:-translate-y-2 hover:scale-[1.02]
                  hover:shadow-[0_25px_50px_rgba(0,0,0,0.7)]
@@ -168,7 +168,7 @@ const SkillCard = ({ skill, onClick }) => {
                  cursor-pointer transition"
     >
       <Icon className="text-white text-8xl lg:text-7xl mb-2" />
-      <span className="text-base font-semibold">{skill.level}</span>
+      {/* <span className="text-base font-semibold">{skill.level}</span> */}
 
       {/* Tooltip */}
       <div

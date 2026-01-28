@@ -133,7 +133,7 @@ const Projects = () => {
               key={index}
               onClick={() => openModal(card)}
               className="w-full mx-auto grid gap-6 border p-6 bg-neutral-950/80 
-              border-slate-600/20 rounded-4xl cursor-pointer duration-300
+              border-white/10 rounded-4xl cursor-pointer duration-300
               hover:-translate-y-2 hover:scale-[1.02]
               hover:shadow-[0_25px_50px_rgba(0,0,0,0.7)]
               hover:bg-orange-700/80 hover:border-orange-500/90"
@@ -165,7 +165,7 @@ const Projects = () => {
         <div className="flex justify-center mt-10">
           <button
             onClick={() => setShowAll(!showAll)}
-            className="px-6 py-3 rounded-full text-white font-semibold 
+            className="px-6 py-3 rounded-full text-white font-semibold cursor-pointer
             bg-gradient-to-r from-orange-700 via-orange-500 to-orange-300
             hover:from-orange-300 hover:via-orange-500 hover:to-orange-700
             transition-all duration-300"

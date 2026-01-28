@@ -16,7 +16,7 @@ const about = () => {
           About Me
         </h1>
         <div
-          className="border-1 p-6 text-white bg-neutral-950/80 border-slate-600/20 rounded-4xl hover:-translate-y-2 hover:scale-[1.02]
+          className="border-1 p-6 text-white bg-neutral-950/80 border-white/10 rounded-4xl hover:-translate-y-2 hover:scale-[1.02]
                hover:shadow-[0_25px_50px_rgba(0,0,0,0.7)] hover:bg-orange-700/80 hover:border-orange-500/90 hover:cursor-pointer duration-300"
         >
           <p className=" text-1xl">

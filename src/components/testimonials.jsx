@@ -1,108 +1,154 @@
-import { useState, useEffect } from "react";
-import agility from "../assets/agility.webp";
-import lcs from "../assets/lcs.webp";
-import dawson from "../assets/dawson.webp";
-import ysn from "../assets/ysn.webp";
+import React, { useState } from "react";
+import { FaQuoteLeft, FaQuoteRight } from "react-icons/fa";
 
 const testimonials = [
   {
-    image: agility,
     name: "Agility Outsourcing",
-    message: "Great guy to work with.",
+    comment: "Great guy to work with.",
   },
   {
-    image: lcs,
-    name: "Jonyeung",
-    message: "It was a pleasure and easy to work with Jomardon G.",
+    name: "MG Computing Solution",
+    comment: "Great service!",
   },
   {
-    image: ysn,
-    name: "You So Ninja",
-    message:
+    name: "Fiverr Client",
+    comment: "It was a pleasure and easy to work with Jomardon G.",
+  },
+  {
+    name: "Fiverr Client",
+    comment:
       "Thank you so much for the helpful boost! We may work together again in the future.",
   },
   {
-    image: dawson,
-    name: "Abavabsolutions",
-    message: "Did a fantastic job!",
-  },
-  {
-    image: "",
-    name: "MG Computing",
-    message: "Great service!",
+    name: "Fiverr Client",
+    comment: "Did a fantastic job!",
   },
 ];
 
-export default function Testimonials() {
-  const [index, setIndex] = useState(0);
+const Testimonials = () => {
+  const [current, setCurrent] = useState(0);
 
-  const next = () => setIndex((prev) => (prev + 1) % testimonials.length);
+  const [startX, setStartX] = useState(null);
+  const [isDragging, setIsDragging] = useState(false);
 
-  const prev = () =>
-    setIndex((prev) => (prev - 1 + testimonials.length) % testimonials.length);
+  const minDragDistance = 80;
 
-  useEffect(() => {
-    const timer = setInterval(next, 5000);
-    return () => clearInterval(timer);
-  }, []);
+  const nextSlide = () =>
+    setCurrent((prev) => (prev + 1) % testimonials.length);
+
+  const prevSlide = () =>
+    setCurrent((prev) => (prev === 0 ? testimonials.length - 1 : prev - 1));
+
+  /* TOUCH */
+  const onTouchStart = (e) => {
+    setStartX(e.touches[0].clientX);
+  };
+
+  const onTouchEnd = (e) => {
+    if (!startX) return;
+    const endX = e.changedTouches[0].clientX;
+    handleSwipe(startX, endX);
+    setStartX(null);
+  };
+
+  /* MOUSE */
+  const onMouseDown = (e) => {
+    setIsDragging(true);
+    setStartX(e.clientX);
+  };
+
+  const onMouseUp = (e) => {
+    if (!isDragging || startX === null) return;
+    handleSwipe(startX, e.clientX);
+    setIsDragging(false);
+    setStartX(null);
+  };
+
+  const onMouseLeave = () => {
+    setIsDragging(false);
+    setStartX(null);
+  };
+
+  /* SHARED LOGIC */
+  const handleSwipe = (start, end) => {
+    const distance = start - end;
+
+    if (distance > minDragDistance) nextSlide();
+    if (distance < -minDragDistance) prevSlide();
+  };
 
   return (
-    <section
-      id="testimonials"
-      className="py-20 bg-gradient-to-tl text-center animate-slide-in-bottom  from-gray-900 via-black to-gray-900"
-    >
-      {/* Title */}
-      <div className="max-w-[1000px] mx-auto h-full flex flex-col items-center justify-items-start px-20">
-        <div className="flex flex-col items-start justify-items-start w-full p">
-          <h2 className="text-3xl pb-8 sm:text-5xl font-extrabold bg-gradient-to-r from-orange-400 via-white to-orange-400 text-transparent bg-clip-text drop-shadow-lg">
-            Testimonials
-          </h2>
-        </div>
-      </div>
+    <div className="bg-black py-20 px-4">
+      <div
+        className="max-w-5xl mx-auto relative overflow-hidden cursor-grab active:cursor-grabbing"
+        onTouchStart={onTouchStart}
+        onTouchEnd={onTouchEnd}
+        onMouseDown={onMouseDown}
+        onMouseUp={onMouseUp}
+        onMouseLeave={onMouseLeave}
+      >
+        {/* SLIDER */}
+        <div
+          className="flex transition-transform duration-500 ease-in-out select-none"
+          style={{ transform: `translateX(-${current * 100}%)` }}
+        >
+          {testimonials.map((t, index) => (
+            <div key={index} className="min-w-full px-2 sm:px-4 flex">
+              <div
+                className="w-full h-full flex flex-col justify-between
+                           border border-white/10 rounded-3xl
+                           bg-neutral-950/90 backdrop-blur-md
+                           p-6 sm:p-10"
+              >
+                {/* HEADER */}
+                <div className="flex items-center gap-3 mb-4">
+                  <div
+                    className="w-10 h-10 rounded-full bg-orange-400 
+                                  flex items-center justify-center text-black font-bold"
+                  >
+                    👤
+                  </div>
+                  <p className="text-orange-400 font-semibold">{t.name}</p>
+                </div>
 
-      <div className="max-w-xl mx-auto relative px-12 ">
-        {/* Card */}
-        <div className="bg-white cursor-pointer rounded-2xl shadow-xl p-8 min-h-[340px] flex flex-col justify-between transition-all duration-500">
-          <div>
-            <img
-              src={testimonials[index].image}
-              alt={testimonials[index].name}
-              className="w-20 h-20 rounded-full mx-auto mb-4 object-cover border-2 border-gray-100"
-            />
+                {/* CONTENT */}
+                <div className="flex-grow">
+                  <FaQuoteLeft className="text-white/20 text-2xl mb-3" />
+                  <p className="text-white/80 text-sm sm:text-lg leading-relaxed">
+                    {t.comment}
+                  </p>
+                </div>
 
-            {/* Stars */}
-            <div className="flex justify-center mb-4 text-yellow-400">
-              ★★★★★
+                {/* FOOTER */}
+                <div className="flex justify-end mt-4">
+                  <FaQuoteRight className="text-white/20 text-2xl" />
+                </div>
+              </div>
             </div>
-
-            <p className="text-black italic leading-relaxed">
-              “{testimonials[index].message}”
-            </p>
-          </div>
-
-          <div className="mt-6">
-            <h3 className="text-black text-lg font-semibold">
-              {testimonials[index].name}
-            </h3>
-          </div>
+          ))}
         </div>
 
-        {/* Prev Button */}
+        {/* ARROWS */}
         <button
-          onClick={prev}
-          className="absolute top-1/2 -left-2 -translate-y-1/2 w-10 h-10 rounded-full bg-white shadow-md hover:bg-orange-500/90 cursor-pointer transition "
+          onClick={prevSlide}
+          className="absolute left-2 top-1/2 -translate-y-1/2 cursor-pointer
+                     bg-black/60 text-white text-2xl
+                     px-3 py-2 rounded-full opacity-70 hover:opacity-100 hover:bg-orange-700/80 hover:border-orange-500/90"
         >
           ‹
         </button>
 
-        {/* Next Button */}
         <button
-          onClick={next}
-          className="absolute top-1/2 -right-2 -translate-y-1/2 w-10 h-10 rounded-full bg-white shadow-md hover:bg-orange-500/90 cursor-pointer transition"
+          onClick={nextSlide}
+          className="absolute right-2 top-1/2 -translate-y-1/2 cursor-pointer
+                     bg-black/60 text-white text-2xl
+                     px-3 py-2 rounded-full opacity-70 hover:opacity-100 hover:bg-orange-700/80 hover:border-orange-500/90"
         >
           ›
         </button>
       </div>
-    </section>
+    </div>
   );
-}
+};
+
+export default Testimonials;

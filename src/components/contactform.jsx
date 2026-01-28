@@ -22,9 +22,12 @@ function contactform() {
       id="contactform"
       className="flex items-center justify-center bg-black py-35"
     >
-      <div className="w-full max-w-lg bg-white rounded-4xl shadow-md space-y-4">
+      <div
+        className="w-full max-w-lg text-white border border-white/10 rounded-3xl
+                           bg-neutral-950/90 shadow-md space-y-4"
+      >
         <form onSubmit={handleSubmit}>
-          <div className="bg-orange-500 p-6 text-white rounded-tl-4xl rounded-tr-4xl">
+          <div className=" p-6 text-white rounded-tl-4xl rounded-tr-4xl">
             <h2 className="text-2xl font-bold text-center">Contact Me</h2>
           </div>
 
@@ -36,7 +39,7 @@ function contactform() {
               name="name"
               placeholder="Your name"
               required
-              className="w-full border px-3 py-2 rounded border-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full border px-3 py-2 rounded my-2 border-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
             />
 
             {/* Email */}
@@ -48,7 +51,7 @@ function contactform() {
               name="email"
               placeholder="you@example.com"
               required
-              className="w-full border px-3 py-2 rounded border-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full border px-3 py-2 rounded my-2 border-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
             />
 
             {/* Message */}
@@ -58,7 +61,7 @@ function contactform() {
               placeholder="Your message..."
               rows="4"
               required
-              className="w-full border px-3 py-2 rounded border-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full border px-3 py-2 rounded my-2 border-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
             />
 
             <p className="text-green-600">{result}</p>
