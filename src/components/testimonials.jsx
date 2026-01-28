@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { FaQuoteLeft, FaQuoteRight } from "react-icons/fa";
 
 const testimonials = [
@@ -39,6 +39,17 @@ const Testimonials = () => {
   const prevSlide = () =>
     setCurrent((prev) => (prev === 0 ? testimonials.length - 1 : prev - 1));
 
+  /**
+   * AUTO SLIDE EVERY 3 SECONDS
+   */
+  useEffect(() => {
+    const interval = setInterval(() => {
+      nextSlide();
+    }, 3000);
+
+    return () => clearInterval(interval);
+  }, []);
+
   /* TOUCH */
   const onTouchStart = (e) => {
     setStartX(e.touches[0].clientX);
@@ -78,9 +89,12 @@ const Testimonials = () => {
   };
 
   return (
-    <div className="bg-black py-20 px-4">
+    <div
+      className="bg-gradient-to-tr from-gray-900 via-black py-40 to-gray-900 py-20 px-4"
+      id="testimonials"
+    >
       <div
-        className="max-w-5xl mx-auto relative overflow-hidden cursor-grab active:cursor-grabbing"
+        className="max-w-[900px] mx-auto relative overflow-hidden cursor-grab active:cursor-grabbing"
         onTouchStart={onTouchStart}
         onTouchEnd={onTouchEnd}
         onMouseDown={onMouseDown}

@@ -23,7 +23,7 @@ function contactform() {
       className="flex items-center justify-center bg-black py-35"
     >
       <div
-        className="w-full max-w-lg text-white border border-white/10 rounded-3xl
+        className="w-full max-w-lg text-white mx-6 border border-white/10 rounded-3xl
                            bg-neutral-950/90 shadow-md space-y-4"
       >
         <form onSubmit={handleSubmit}>

@@ -192,7 +192,7 @@ const Skills = () => {
     >
       <div className="max-w-[1000px] mx-auto p-20">
         <h2
-          className="text-3xl sm:text-5xl font-extrabold 
+          className="text-3xl sm:text-4xl font-extrabold 
                      bg-gradient-to-r from-orange-400 via-white to-orange-400
                      text-transparent bg-clip-text"
         >

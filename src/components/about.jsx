@@ -9,7 +9,7 @@ const about = () => {
       {/*About Me Section*/}
       <div className="max-w-[1000px] mx-auto grid gap-10 leading-7 animate-slide-in-top">
         <h1
-          className="text-3xl sm:text-5xl font-extrabold 
+          className="text-3xl sm:text-4xl font-extrabold 
                       bg-gradient-to-r from-orange-400 via-white to-orange-400
                       text-transparent bg-clip-text drop-shadow-lg"
         >

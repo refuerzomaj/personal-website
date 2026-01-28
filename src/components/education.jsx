@@ -114,7 +114,7 @@ const Educations = () => {
   return (
     <div className="bg-black py-10 px-10 h-full grid gap-16" id="education">
       <div className="max-w-[1000px] lg:mx-auto grid gap-6 animate-slide-in-top">
-        <h1 className="text-3xl sm:text-5xl font-extrabold bg-gradient-to-r from-orange-400 via-white to-orange-400 text-transparent bg-clip-text">
+        <h1 className="text-3xl sm:text-4xl font-extrabold bg-gradient-to-r from-orange-400 via-white to-orange-400 text-transparent bg-clip-text">
           Education
         </h1>
 
