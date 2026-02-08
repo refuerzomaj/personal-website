@@ -10,6 +10,7 @@ import image8 from "../assets/keystone.png";
 import image9 from "../assets/agility.png";
 import image10 from "../assets/browsercache.png";
 import image11 from "../assets/dpwh.png";
+import image12 from "../assets/jesus-christ-bible.png";
 
 const Projects = () => {
   const [showAll, setShowAll] = useState(false);
@@ -17,6 +18,13 @@ const Projects = () => {
   const [modalVisible, setModalVisible] = useState(false);
 
   const cards = [
+    {
+      image: image12,
+      title: "Jesus Christ & Bible",
+      link: "https://refuerzomaj.github.io/Jesus-Christ-Bible/",
+      description: "Single-page website about Jesus Christ and the Bible.",
+      tags: ["React", "Tailwind CSS", "Figma", "Git"],
+    },
     {
       image: image2,
       title: "Juvimor Construction & Trading Services",
