@@ -12,11 +12,18 @@ import certVB from "../assets/certificates/visualbasic.png";
 import certDigital from "../assets/certificates/digital.png";
 import certCrypto from "../assets/certificates/cryptography.png";
 import certJava from "../assets/certificates/java.png";
+import reactCert from "../assets/certificates/react.jpg";
 
 /* =======================
    CERTIFICATE DATA
 ======================= */
 const certificates = [
+  {
+    date: "March 20, 2026",
+    title: "React - The Complete Guide (incl. Next.js, Redux)",
+    issuer: "Udemy",
+    image: reactCert,
+  },
   {
     date: "January 22, 2026",
     title: "Unlock WordPress Power: Build Themes, Plugins & FSE Sites",

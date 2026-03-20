@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import myPhoto from "../assets/myPhoto.png";
 import { TypeAnimation } from "react-type-animation";
+import ParallaxReveal from "../components/parallaxEffect";
 import {
   FaLinkedinIn,
   FaGithub,
