@@ -31,7 +31,8 @@ const Projects = () => {
       image: image2,
       title: "Juvimor Construction & Trading Services",
       link: "https://juvimor.com",
-      description: "Corporate website with clean layout and responsive design.",
+      description:
+        "A corporate website built with WordPress and Elementor Pro, focused on clean layout, performance, and responsive design.",
       tags: ["WordPress", "Elementor Pro", "CSS", "jQuery"],
       category: "wordpress",
     },
@@ -39,7 +40,8 @@ const Projects = () => {
       image: image3,
       title: "HSM Aero",
       link: "https://hsm.aero",
-      description: "Aviation website with modern UI and performance focus.",
+      description:
+        "Aviation-focused website showcasing services and company profile with a modern UI and optimized performance.",
       tags: ["WordPress", "Elementor Pro", "CSS", "jQuery"],
       category: "wordpress",
     },
@@ -55,7 +57,8 @@ const Projects = () => {
       image: image4,
       title: "LCS Logistics",
       link: "http://lcslogistics.com",
-      description: "Logistics website focused on clarity and usability.",
+      description:
+        "Logistics company website designed for clarity, accessibility, and ease of navigation across devices.",
       tags: ["WordPress", "Elementor Pro", "CSS", "jQuery"],
       category: "wordpress",
     },
@@ -63,46 +66,60 @@ const Projects = () => {
       image: image10,
       title: "Browser Cache",
       link: "https://wordpress-1091546-4178418.cloudwaysapps.com/",
-      description: "WordPress performance and caching demo project.",
-      tags: ["WordPress"],
+      description:
+        "A WordPress-based demo project focusing on cache behavior, optimization, and performance testing.",
+      tags: ["WordPress", "Elementor Pro", "CSS", "jQuery"],
       category: "wordpress",
     },
     {
       image: image5,
       title: "Obando Bulacan",
-      description: "Government website for tourism and announcements.",
-      tags: ["WordPress"],
+      description:
+        "A local government website project highlighting tourism, announcements, and public information.",
+      tags: ["WordPress", "Elementor Pro", "CSS", "jQuery"],
       category: "wordpress",
     },
     {
       image: image6,
       title: "MPM House",
       link: "https://mpm.house",
-      description: "Real estate website with clean UI.",
-      tags: ["WordPress"],
+      description:
+        "Real estate website showcasing property listings with clean visuals and responsive layout.",
+      tags: ["WordPress", "Elementor Pro"],
       category: "wordpress",
     },
     {
       image: image7,
       title: "Spotlight Accounting",
-      description: "Accounting firm website with professional design.",
-      tags: ["WordPress"],
+      description:
+        "Accounting firm website with a professional look, clear service structure, and contact-focused design.",
+      tags: ["WordPress", "Elementor Pro", "CSS", "jQuery"],
       category: "wordpress",
     },
     {
       image: image8,
       title: "Keystone Invest",
       link: "https://keystone-invest.co.uk",
-      description: "Custom WordPress theme with ACF and PHP.",
-      tags: ["WordPress", "PHP", "ACF"],
+      description:
+        "Custom WordPress theme using ACF and PHP for flexible content management and scalability.",
+      tags: [
+        "WordPress",
+        "Elementor Pro",
+        "CSS",
+        "jQuery",
+        "PHP",
+        "Advance Custom Fields",
+        "Custom Theme",
+      ],
       category: "wordpress",
     },
     {
       image: image9,
       title: "Agility Outsourcing",
       link: "https://agility-outsourcing.co.uk",
-      description: "Corporate outsourcing website.",
-      tags: ["WordPress"],
+      description:
+        "Corporate outsourcing website focused on branding consistency and lead generation.",
+      tags: ["WordPress", "Elementor Pro", "CSS", "jQuery"],
       category: "wordpress",
     },
   ];
@@ -113,7 +130,7 @@ const Projects = () => {
       ? cards
       : cards.filter((card) => card.category === activeTab);
 
-  const visibleCards = showAll ? filteredCards : filteredCards.slice(0, 3);
+  const visibleCards = showAll ? filteredCards : filteredCards.slice(0, 4);
 
   const openModal = (card) => {
     setSelectedProject(card);
@@ -127,7 +144,7 @@ const Projects = () => {
 
   return (
     <div className="bg-black" id="projects">
-      <div className="max-w-[1000px] mx-auto grid gap-6 p-6 sm:p-10 lg:p-20">
+      <div className="max-w-[1150px] mx-auto grid gap-6 p-6 sm:p-10 lg:p-20">
         <h1 className="text-3xl sm:text-4xl font-extrabold bg-gradient-to-r from-orange-400 via-white to-orange-400 text-transparent bg-clip-text">
           Projects
         </h1>
@@ -153,7 +170,7 @@ const Projects = () => {
         </div>
 
         {/* PROJECT LIST */}
-        <div className="grid grid-cols-1 gap-6 md:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
           {visibleCards.map((card, index) => (
             <div
               key={index}
@@ -170,7 +187,7 @@ const Projects = () => {
                 alt={card.title}
               />
 
-              <div className="flex flex-wrap gap-3 text-white">
+              {/* <div className="flex flex-wrap gap-3 text-white">
                 {card.tags.map((tag, i) => (
                   <p
                     key={i}
@@ -179,7 +196,7 @@ const Projects = () => {
                     {tag}
                   </p>
                 ))}
-              </div>
+              </div> */}
 
               <h2 className="text-2xl text-white font-extrabold">
                 {card.title}
@@ -189,13 +206,13 @@ const Projects = () => {
         </div>
 
         {/* SEE MORE */}
-        {filteredCards.length > 3 && (
+        {filteredCards.length > 4 && (
           <div className="flex justify-center mt-10">
             <button
               onClick={() => setShowAll(!showAll)}
               className="px-6 py-3 rounded-full text-white font-semibold
               bg-gradient-to-r from-orange-700 via-orange-500 to-orange-300
-              hover:from-orange-300 hover:to-orange-700 transition"
+              hover:from-orange-300 hover:to-orange-700 transition hover:cursor-pointer"
             >
               {showAll ? "See Less" : "See More"}
             </button>

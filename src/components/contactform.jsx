@@ -39,7 +39,7 @@ function contactform() {
               name="name"
               placeholder="Your name"
               required
-              className="w-full border px-3 py-2 rounded my-2 border-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full border px-3 py-2 rounded my-2 text-black border-gray-400 bg-white focus:outline-none focus:ring-2 focus:ring-blue-500"
             />
 
             {/* Email */}
@@ -51,7 +51,7 @@ function contactform() {
               name="email"
               placeholder="you@example.com"
               required
-              className="w-full border px-3 py-2 rounded my-2 border-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full border px-3 py-2 text-black bg-white rounded my-2 border-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
             />
 
             {/* Message */}
@@ -61,7 +61,7 @@ function contactform() {
               placeholder="Your message..."
               rows="4"
               required
-              className="w-full border px-3 py-2 rounded my-2 border-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full border px-3 py-2 text-black bg-white rounded my-2 border-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
             />
 
             <p className="text-green-600">{result}</p>

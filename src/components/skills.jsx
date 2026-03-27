@@ -147,7 +147,7 @@ const SkillCard = ({ skill, onClick }) => {
   return (
     <div
       onClick={() => onClick(skill)}
-      className="group relative w-42 h-42 lg:w-32 lg:h-32 bg-neutral-950/90 backdrop-blur-md rounded-xl p-6 border border-white/10 shadow-lg text-white flex flex-col items-center justify-center hover:-translate-y-2 hover:scale-[1.02] hover:shadow-[0_25px_50px_rgba(0,0,0,0.7)] hover:bg-orange-700/80 hover:border-orange-500/90 cursor-pointer transition"
+      className="group relative w-32 h-32 lg:w-32 lg:h-32 bg-neutral-950/90 backdrop-blur-md rounded-xl p-6 border border-white/10 shadow-lg text-white flex flex-col items-center justify-center hover:-translate-y-2 hover:scale-[1.02] hover:shadow-[0_25px_50px_rgba(0,0,0,0.7)] hover:bg-orange-700/80 hover:border-orange-500/90 cursor-pointer transition"
     >
       <Icon className="text-white text-8xl lg:text-7xl mb-2" />
 
@@ -168,14 +168,14 @@ const Skills = () => {
       className="bg-gradient-to-tl from-gray-900 via-black to-gray-900"
       id="skills"
     >
-      <div className="max-w-[1000px] mx-auto p-20">
+      <div className="max-w-[1100px] mx-auto p-10">
         <ParallaxReveal effect="fadeTop" mobileEffect="fadeTop">
           <h2 className="text-3xl sm:text-4xl font-extrabold bg-gradient-to-r from-orange-400 via-white to-orange-400 text-transparent bg-clip-text">
             Skills & Technologies
           </h2>
         </ParallaxReveal>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 mt-10 justify-items-center max-[350px]:grid-cols-1">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-8 mt-10 justify-items-center max-[350px]:grid-cols-1">
           {skillsData.map((skill, index) => (
             <ParallaxReveal
               key={index}

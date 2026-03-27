@@ -25,10 +25,6 @@ const Footer = () => {
           {/* Logo Section */}
           <div>
             <h2 className="text-2xl font-bold text-white">JG</h2>
-            <p className="mt-3 text-sm text-gray-400">
-              Building modern and responsive web applications with React and
-              Tailwind CSS.
-            </p>
           </div>
 
           {/* Pages Links */}
