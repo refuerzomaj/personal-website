@@ -113,7 +113,7 @@ const hero = () => {
               <img
                 className="w-[380px] rounded-3xl border-2 bg-neutral-950/80 border-white/10 hover:border-orange-600 hover:border-2 hover:cursor-pointer duration-500 bg-blend-color md:w-[300px] lg:w-[500px]"
                 src={myPhoto}
-                alt="my photo"
+                alt="Jomardon Gabitanan web developer Philippines"
               />
             </center>
           </div>
