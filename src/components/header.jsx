@@ -78,36 +78,45 @@ const Header = () => {
 
         {/* Desktop Menu */}
         <nav className="hidden lg:flex gap-10 items-center">
-          <a onClick={() => handleClick("home")} className={linkClass("home")}>
+          <a
+            onClick={() => handleClick("home")}
+            className={linkClass("home")}
+            href="#home"
+          >
             Home
           </a>
           <a
             onClick={() => handleClick("about")}
             className={linkClass("about")}
+            href="#about"
           >
             About Me
           </a>
           <a
             onClick={() => handleClick("skills")}
             className={linkClass("skills")}
+            href="#skills"
           >
             Skills
           </a>
           <a
             onClick={() => handleClick("projects")}
             className={linkClass("projects")}
+            href="#projects"
           >
             Projects
           </a>
           <a
             onClick={() => handleClick("testimonials")}
             className={linkClass("testimonials")}
+            href="#testimonials"
           >
             Testimonials
           </a>
           <a
             onClick={() => handleClick("contactform")}
             className="font-bold py-3 px-7 rounded-full cursor-pointer text-white bg-gradient-to-r from-orange-700 via-orange-500 to-orange-300 hover:from-orange-300 hover:via-orange-500 hover:to-orange-700 transition-colors duration-300"
+            href="#contactForm"
           >
             Contact Me!
           </a>
@@ -150,6 +159,7 @@ const Header = () => {
                 ? "text-orange-500 font-semibold"
                 : "text-white hover:text-orange-400"
             }`}
+            href="#home"
           >
             Home
           </a>
@@ -160,6 +170,7 @@ const Header = () => {
                 ? "text-orange-500 font-semibold"
                 : "text-white hover:text-orange-400"
             }`}
+            href="#about"
           >
             About Me
           </a>
@@ -170,6 +181,7 @@ const Header = () => {
                 ? "text-orange-500 font-semibold"
                 : "text-white hover:text-orange-400"
             }`}
+            href="#skills"
           >
             Skills
           </a>
@@ -180,6 +192,7 @@ const Header = () => {
                 ? "text-orange-500 font-semibold"
                 : "text-white hover:text-orange-400"
             }`}
+            href="projects"
           >
             Projects
           </a>
@@ -190,12 +203,14 @@ const Header = () => {
                 ? "text-orange-500 font-semibold"
                 : "text-white hover:text-orange-400"
             }`}
+            href="testimonials"
           >
             Testimonials
           </a>
           <a
             onClick={() => handleClick("contactform")}
-            className="cursor-pointerfont-bold py-3 px-5 text-center rounded-full bg-gradient-to-r from-orange-700 via-orange-500 to-orange-300 hover:from-orange-300 hover:via-orange-500 hover:to-orange-700 transition-colors duration-300"
+            className="cursor-pointer font-bold py-3 px-5 text-center rounded-full bg-gradient-to-r from-orange-700 via-orange-500 to-orange-300 hover:from-orange-300 hover:via-orange-500 hover:to-orange-700 transition-colors duration-300"
+            href="#contactForm"
           >
             Contact Me!
           </a>

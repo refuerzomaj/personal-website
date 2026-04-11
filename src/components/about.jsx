@@ -8,13 +8,13 @@ const about = () => {
     >
       {/*About Me Section*/}
       <div className="max-w-[1000px] mx-auto grid gap-10 leading-7 animate-slide-in-top">
-        <h1
+        <h2
           className="text-3xl sm:text-4xl font-extrabold 
                       bg-gradient-to-r from-orange-400 via-white to-orange-400
                       text-transparent bg-clip-text drop-shadow-lg"
         >
           About Me
-        </h1>
+        </h2>
         <div
           className="border-1 p-6 text-white bg-neutral-950/80 border-white/10 rounded-4xl hover:-translate-y-2 hover:scale-[1.02]
                hover:shadow-[0_25px_50px_rgba(0,0,0,0.7)] hover:bg-orange-700/80 hover:border-orange-500/90 hover:cursor-pointer duration-300"

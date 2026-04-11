@@ -145,9 +145,9 @@ const Projects = () => {
   return (
     <div className="bg-black" id="projects">
       <div className="max-w-[1150px] mx-auto grid gap-6 p-6 sm:p-10 lg:p-20">
-        <h1 className="text-3xl sm:text-4xl font-extrabold bg-gradient-to-r from-orange-400 via-white to-orange-400 text-transparent bg-clip-text">
+        <h2 className="text-3xl sm:text-4xl font-extrabold bg-gradient-to-r from-orange-400 via-white to-orange-400 text-transparent bg-clip-text">
           Projects
-        </h1>
+        </h2>
 
         {/* ✅ TABS */}
         <div className="flex gap-4 justify-center flex-wrap">
