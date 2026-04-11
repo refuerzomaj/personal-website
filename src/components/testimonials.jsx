@@ -90,7 +90,7 @@ const Testimonials = () => {
 
   return (
     <div
-      className="bg-gradient-to-tr from-gray-900 via-black py-40 to-gray-900 py-20 px-4"
+      className="bg-gradient-to-tr from-gray-900 via-black py-40 to-gray-900 npx-4"
       id="testimonials"
     >
       <div
