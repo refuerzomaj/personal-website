@@ -17,9 +17,9 @@ function ContactForm() {
 
     const data = await response.json();
     setSubmitted(true);
-    // setTimeout(() => {
-    //   setSubmitted(false);
-    // }, 3000);
+    setTimeout(() => {
+      setSubmitted(false);
+    }, 3000);
   };
 
   return (
@@ -34,7 +34,7 @@ function ContactForm() {
             <div className="p-10">
               <div>
                 {submitted ? (
-                  <div className="bg-green-50 border border-green-200  p-4 text-center">
+                  <div className="bg-green-50 border border-green-200 p-4 mb-2 text-center">
                     <p className="text-green-700 text-[15px]">
                       Your message has been sent successfully. We'll get back to
                       you soon!
