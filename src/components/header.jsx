@@ -192,7 +192,7 @@ const Header = () => {
                 ? "text-orange-500 font-semibold"
                 : "text-white hover:text-orange-400"
             }`}
-            href="projects"
+            href="#projects"
           >
             Projects
           </a>
@@ -203,7 +203,7 @@ const Header = () => {
                 ? "text-orange-500 font-semibold"
                 : "text-white hover:text-orange-400"
             }`}
-            href="testimonials"
+            href="#testimonials"
           >
             Testimonials
           </a>
