@@ -1,10 +1,13 @@
 import { useState, useEffect } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
+import { IoClose } from "react-icons/io5";
+import Form from "./popupForm";
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [active, setActive] = useState("home");
+  const [isOpen, setIsOpen] = useState(false);
 
   // Handle scroll background
   useEffect(() => {
@@ -25,7 +28,7 @@ const Header = () => {
         "skills",
         "projects",
         "testimonials",
-        "contact",
+        "contactform",
       ];
       const scrollY = window.scrollY + 100; // offset for header height
 
@@ -54,7 +57,7 @@ const Header = () => {
 
   // Shared link style for desktop
   const linkClass = (id) =>
-    `relative cursor-pointer font-medium transition-all duration-300 
+    `relative cursor-pointer text-[14px] font-medium transition-all duration-300 
      after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-full after:bg-orange-500 
      after:transition-transform after:duration-300 after:origin-left
      ${
@@ -62,13 +65,12 @@ const Header = () => {
          ? "text-orange-500 after:scale-x-100"
          : "text-white after:scale-x-0 hover:text-orange-400 hover:after:scale-x-100"
      }`;
-
   return (
     <header>
       {/* Top Navbar */}
       <div
         className={`fixed top-0 left-0 w-full z-50 flex justify-between items-center px-10 py-4 transition-all duration-500 ${
-          scrolled ? "bg-black/70 backdrop-blur-md shadow-md" : "bg-transparent"
+          scrolled ? "bg-black/30 backdrop-blur-md shadow-md" : "bg-transparent"
         }`}
       >
         {/* Logo */}
@@ -83,49 +85,56 @@ const Header = () => {
             className={linkClass("home")}
             href="#home"
           >
-            Home
+            HOME
           </a>
           <a
             onClick={() => handleClick("about")}
             className={linkClass("about")}
             href="#about"
           >
-            About Me
+            ABOUT ME
           </a>
           <a
             onClick={() => handleClick("skills")}
             className={linkClass("skills")}
             href="#skills"
           >
-            Skills
+            SKILLS
           </a>
           <a
             onClick={() => handleClick("projects")}
             className={linkClass("projects")}
             href="#projects"
           >
-            Projects
+            PROJECTS
           </a>
           <a
             onClick={() => handleClick("testimonials")}
             className={linkClass("testimonials")}
             href="#testimonials"
           >
-            Testimonials
+            TESTIMONIALS
           </a>
           <a
             onClick={() => handleClick("contactform")}
-            className="font-bold py-3 px-7 rounded-full cursor-pointer text-white bg-gradient-to-r from-orange-700 via-orange-500 to-orange-300 hover:from-orange-300 hover:via-orange-500 hover:to-orange-700 transition-colors duration-300"
+            className={linkClass("contactform")}
             href="#contactForm"
           >
-            Contact Me!
+            CONTACT
+          </a>
+          <a
+            onClick={() => setIsOpen(true)}
+            className="font-bold py-3 px-7 cursor-pointer text-white bg-transparent border-1 hover:border-orange-500 hover:text-orange-500 transition-colors duration-300"
+            href="#hireMe"
+          >
+            HIRE ME!
           </a>
         </nav>
 
         {/* Mobile Menu Button */}
         <button
           onClick={() => setMenuOpen(true)}
-          className="lg:hidden text-2xl text-orange-500 cursor-pointer"
+          className="lg:hidden text-2xl text-white hover:text-orange-500 cursor-pointer"
         >
           <FaBars />
         </button>
@@ -161,7 +170,7 @@ const Header = () => {
             }`}
             href="#home"
           >
-            Home
+            HOME
           </a>
           <a
             onClick={() => handleClick("about")}
@@ -172,7 +181,7 @@ const Header = () => {
             }`}
             href="#about"
           >
-            About Me
+            ABOUT ME
           </a>
           <a
             onClick={() => handleClick("skills")}
@@ -183,7 +192,7 @@ const Header = () => {
             }`}
             href="#skills"
           >
-            Skills
+            SKILLS
           </a>
           <a
             onClick={() => handleClick("projects")}
@@ -194,7 +203,7 @@ const Header = () => {
             }`}
             href="#projects"
           >
-            Projects
+            PROJECTS
           </a>
           <a
             onClick={() => handleClick("testimonials")}
@@ -205,14 +214,24 @@ const Header = () => {
             }`}
             href="#testimonials"
           >
-            Testimonials
+            TESTIMONIALS
           </a>
           <a
             onClick={() => handleClick("contactform")}
-            className="cursor-pointer font-bold py-3 px-5 text-center rounded-full bg-gradient-to-r from-orange-700 via-orange-500 to-orange-300 hover:from-orange-300 hover:via-orange-500 hover:to-orange-700 transition-colors duration-300"
+            className={linkClass("contact")}
             href="#contactForm"
           >
-            Contact Me!
+            CONTACT
+          </a>
+          <a
+            onClick={() => {
+              setIsOpen(true);
+              setMenuOpen(false);
+            }}
+            className="font-bold py-3 px-7 cursor-pointer text-center text-white bg-transparent border-1 hover:border-orange-500 hover:text-orange-500 transition-colors duration-300"
+            href="#hireMe"
+          >
+            HIRE ME!
           </a>
         </nav>
       </div>
@@ -221,9 +240,37 @@ const Header = () => {
       {menuOpen && (
         <div
           onClick={() => setMenuOpen(false)}
-          className="fixed inset-0 bg-black opacity-40 z-40 lg:hidden"
+          className="fixed inset-0 bg-black/90 opacity-40 z-40 lg:hidden"
         ></div>
       )}
+      {/* Overlay */}
+      <div
+        className={`fixed inset-0 bg-black/90 flex items-center justify-center transition-opacity duration-300 z-100 ${
+          isOpen ? "opacity-100 visible" : "opacity-0 invisible"
+        }`}
+        onClick={() => setIsOpen(false)}
+      >
+        {/* Popup Box */}
+        <div
+          className={`bg-gray-200 w-[90%] border-black/50 border-1 max-w-lvh rounded-3xl shadow-xl transform transition-all duration-300 ${
+            isOpen
+              ? "translate-x-0 translate-y-0 opacity-100 scale-100"
+              : "-translate-x-full -translate-y-full lg:translate-x-full lg:-translate-y-full opacity-0 scale-95"
+          }`}
+          onClick={(e) => e.stopPropagation()}
+        >
+          <div className="relative flex flex-col">
+            {/* Close */}
+            <button
+              onClick={() => setIsOpen(false)}
+              className="absolute top-3 right-4 text-2xl hover:cursor-pointer"
+            >
+              <IoClose className="text-white" />
+            </button>
+            <Form />
+          </div>
+        </div>
+      </div>
     </header>
   );
 };

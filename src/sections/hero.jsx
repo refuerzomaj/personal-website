@@ -18,7 +18,7 @@ import { TbBrandFiverr, TbWorldWww, TbBrandJavascript } from "react-icons/tb";
 import { BiLogoGmail, BiLogoJquery } from "react-icons/bi";
 import { SiUpwork } from "react-icons/si";
 import { PiDownloadSimpleBold } from "react-icons/pi";
-import Counter from "./counter";
+import Counter from "../components/counter";
 
 const hero = () => {
   return (
@@ -59,6 +59,14 @@ const hero = () => {
               I specialize in creating functional and scalable web solutions
               that elevate user experiences and drive results.
             </p>
+            <div className="py-6">
+              <a
+                href="#contactform"
+                className="items-center justify-center gap-2 text-white rounded-full border-1 border-white py-4 px-9 hover:bg-orange-500 hover:border-orange-500 transition-colors duration-300"
+              >
+                Let's Talk
+              </a>
+            </div>
           </div>
           <div className="flex justify-start gap-4 items-center h-full ">
             <a
@@ -96,18 +104,11 @@ const hero = () => {
             >
               <BiLogoGmail className="text-white" />
             </a>
-            {/* <a
-              href="http://"
-              target="_blank"
-              className="flex items-center justify-center gap-2 text-white rounded-full border-1 border-white py-4 px-9 hover:bg-orange-500 hover:border-orange-500 transition-colors duration-300"
-            >
-              Download CV <PiDownloadSimpleBold className="text-white" />
-            </a> */}
           </div>
         </div>
 
         {/* Right Section */}
-        <div className="order-1 md:order-2 animate-slide-in-right col-span-1 sm:col-span-2 md:col-span-2 xl:col-span-1 flex justify-center rows-start-1">
+        <div className="order-1 hidden md:order-2 animate-slide-in-right col-span-1 sm:col-span-2 md:col-span-2 xl:col-span-1 md:flex justify-center rows-start-1">
           <div className="w-100 h-100 rounded-full">
             <center>
               <img

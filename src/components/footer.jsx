@@ -1,5 +1,5 @@
 import React from "react";
-import Testimonials from "./testimonials";
+import Testimonials from "../sections/testimonials";
 import { FaLinkedinIn, FaGithub } from "react-icons/fa6";
 import { TbBrandFiverr } from "react-icons/tb";
 import { BiLogoGmail } from "react-icons/bi";

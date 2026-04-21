@@ -1,14 +1,13 @@
 import React from "react";
-import Homepage from "./components/herobanner.jsx";
-import Hero from "./components/hero.jsx";
+import Hero from "./sections/hero.jsx";
 import Header from "./components/header.jsx";
-import About from "./components/about.jsx";
-import Educations from "./components/education.jsx";
-import Certificate from "./components/certificate.jsx";
-import Skills from "./components/skills.jsx";
-import Projects from "./components/projects.jsx";
-import Testimonials from "./components/testimonials.jsx";
-import Contact from "./components/contactform.jsx";
+import About from "./sections/about.jsx";
+import Educations from "./sections/education.jsx";
+import Certificate from "./sections/certificate.jsx";
+import Skills from "./sections/skills.jsx";
+import Projects from "./sections/projects.jsx";
+import Testimonials from "./sections/testimonials.jsx";
+import Contact from "./sections/contactform.jsx";
 import Footer from "./components/footer.jsx";
 import { Helmet } from "react-helmet-async";
 
