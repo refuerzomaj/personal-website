@@ -3,7 +3,7 @@ import { Send } from "lucide-react";
 import { div } from "motion/react-client";
 import { FaLinkedinIn } from "react-icons/fa6";
 import { IoIosHome, IoIosCall } from "react-icons/io";
-import { SiGmail } from "react-icons/si";
+import { BiLogoGmail } from "react-icons/bi";
 import FloatingInput from "../components/floatingInput";
 
 function ContactForm() {
@@ -29,8 +29,8 @@ function ContactForm() {
   return (
     <div id="contactform" className=" bg-black">
       <div className="max-w-[1150px] mx-auto ">
-        <div className="flex items-center justify-center py-20 px-4">
-          <div className="w-full grid md:grid-cols-2 gap-6">
+        <div className="flex items-center justify-center py-20 px-10">
+          <div className="w-full grid lg:grid-cols-2 gap-6">
             {/* LEFT SIDE - MAP */}
             <div className="border bg-white border-white/10 rounded-3xl  shadow-md">
               <form onSubmit={handleSubmit}>
@@ -84,7 +84,7 @@ function ContactForm() {
             </div>
             {/* RIGHT SIDE - FORM */}
             <div
-              className="w-full h-[400px] gap-6 md:h-auto rounded-3xl overflow-hidden border bg-neutral-950/80 
+              className="w-full  h-[400px] gap-6 md:h-auto rounded-3xl overflow-hidden border bg-neutral-950/80 
               border-white/10 p-10"
             >
               <div className="text-white text-2xl font-extrabold pb-6">
@@ -95,7 +95,7 @@ function ContactForm() {
                 <p className="text-white">Taguig City</p>
               </div>
               <div className="flex justify-start gap-4 p-2">
-                <SiGmail className="text-white text-xl" />
+                <BiLogoGmail className="text-white text-2xl" />
                 <p className="text-white">gabitanan.jomardon@gmail.com</p>
               </div>
               <div className="flex justify-start gap-4 p-2">
