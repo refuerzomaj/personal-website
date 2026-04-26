@@ -292,11 +292,28 @@ export default function ChatWidget() {
       {open && (
         <div
           ref={chatRef}
-          className="fixed bottom-20 right-6 w-[360px] h-[520px] bg-[#0f172a] text-white rounded-2xl shadow-2xl flex flex-col overflow-hidden border border-white/10"
+          className="fixed 
+    bottom-0 right-0
+    w-full sm:w-[360px]
+    h-full sm:h-[520px]
+    sm:bottom-20 sm:right-6
+    bg-[#0f172a] text-white 
+    rounded-none sm:rounded-2xl 
+    shadow-2xl flex flex-col 
+    overflow-hidden border border-white/10
+    z-50"
         >
           {/* Header */}
-          <div className="bg-[#111827] p-4 font-semibold border-b border-white/10">
-            JG Assistant
+          <div className="bg-[#111827] p-4 font-semibold border-b border-white/10 flex items-center justify-between">
+            <span>JG Assistant</span>
+
+            {/* Close button (mobile + desktop safe) */}
+            <button
+              onClick={() => setOpen(false)}
+              className="sm:hidden text-white/70 hover:text-white transition"
+            >
+              <IoCloseCircleSharp size={22} />
+            </button>
           </div>
 
           {/* Messages */}
