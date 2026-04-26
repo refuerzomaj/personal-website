@@ -10,6 +10,7 @@ import Testimonials from "./sections/testimonials.jsx";
 import Contact from "./sections/contactform.jsx";
 import Footer from "./components/footer.jsx";
 import { Helmet } from "react-helmet-async";
+import ChatWidget from "./components/chatwidget.jsx";
 
 const App = () => {
   return (
@@ -31,6 +32,7 @@ const App = () => {
         <Projects />
         <Testimonials />
         <Contact />
+        <ChatWidget />
         <Footer />
       </div>
     </>

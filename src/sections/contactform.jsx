@@ -84,20 +84,26 @@ function ContactForm() {
             </div>
             {/* RIGHT SIDE - FORM */}
             <div
-              className="w-full  h-[400px] gap-6 md:h-auto rounded-3xl overflow-hidden border bg-neutral-950/80 
-              border-white/10 p-10"
+              className="w-full h-[400px] gap-6 md:h-auto rounded-3xl overflow-hidden border bg-neutral-950/80 
+  border-white/10 p-10"
             >
               <div className="text-white text-2xl font-extrabold pb-6">
                 <h2>Contact Address</h2>
               </div>
+
               <div className="flex justify-start gap-4 p-2">
                 <IoIosHome className="text-white text-2xl" />
                 <p className="text-white">Taguig City</p>
               </div>
-              <div className="flex justify-start gap-4 p-2">
-                <BiLogoGmail className="text-white text-2xl" />
-                <p className="text-white">gabitanan.jomardon@gmail.com</p>
+
+              {/* FIXED EMAIL */}
+              <div className="flex justify-start gap-4 p-2 min-w-0">
+                <BiLogoGmail className="text-white text-2xl flex-shrink-0" />
+                <p className="text-white break-all">
+                  gabitanan.jomardon@gmail.com
+                </p>
               </div>
+
               <div className="flex justify-start gap-4 p-2">
                 <IoIosCall className="text-white text-2xl" />
                 <p className="text-white">0977 754 7404</p>
